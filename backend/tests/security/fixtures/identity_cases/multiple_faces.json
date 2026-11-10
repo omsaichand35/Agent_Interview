@@ -1,0 +1,6 @@
+{
+  "scenario": "multiple_faces",
+  "face_count": 2,
+  "expected_status": "review",
+  "expected_reason_code": "MULTIPLE_FACES"
+}

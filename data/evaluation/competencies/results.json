@@ -1,0 +1,463 @@
+{
+  "total_cases": 20,
+  "overall_detection": {
+    "precision": 0.9655,
+    "recall": 0.9655,
+    "f1": 0.9655,
+    "true_positives": 28,
+    "false_positives": 1,
+    "false_negatives": 1
+  },
+  "discovery_metrics": {
+    "precision": 0.7059,
+    "recall": 1.0,
+    "f1": 0.8276,
+    "true_positives": 12,
+    "false_positives": 5,
+    "false_negatives": 0
+  },
+  "false_discovery": {
+    "total_noise_entities_tested": 10,
+    "noise_rejection_rate": 1.0,
+    "false_discovery_rate": 0.0
+  },
+  "normalization": {
+    "total_phrases_tested": 38,
+    "normalized_correctly": 38,
+    "normalization_accuracy": 1.0
+  },
+  "latency": {
+    "average_latency_ms": 0.219,
+    "turn_delay": 0,
+    "within_turn_cycle": true
+  },
+  "details": [
+    {
+      "case_id": "COMP_001",
+      "answer": "I optimized our API and mentored two junior developers.",
+      "planned": [
+        "problem_solving",
+        "technical_skills"
+      ],
+      "predicted_detected": [
+        "leadership",
+        "problem_solving",
+        "backend_development"
+      ],
+      "expected_competencies": [
+        "problem_solving",
+        "backend_development",
+        "leadership"
+      ],
+      "predicted_discovered": [
+        "leadership",
+        "backend_development"
+      ],
+      "expected_discovered": [
+        "leadership"
+      ],
+      "false_discoveries": [],
+      "latency_ms": 0.985,
+      "is_perfect_match": true
+    },
+    {
+      "case_id": "COMP_002",
+      "answer": "I architected partitioned PostgreSQL clusters with Redis caching, reducing p99 latency to 28ms.",
+      "planned": [
+        "system_design",
+        "backend_development"
+      ],
+      "predicted_detected": [
+        "system_design",
+        "databases",
+        "problem_solving"
+      ],
+      "expected_competencies": [
+        "system_design",
+        "databases",
+        "problem_solving"
+      ],
+      "predicted_discovered": [
+        "databases",
+        "problem_solving"
+      ],
+      "expected_discovered": [
+        "databases"
+      ],
+      "false_discoveries": [],
+      "latency_ms": 0.483,
+      "is_perfect_match": true
+    },
+    {
+      "case_id": "COMP_003",
+      "answer": "While refactoring the backend in FastAPI, I configured Docker and set up the AWS deployment pipeline.",
+      "planned": [
+        "technical_skills"
+      ],
+      "predicted_detected": [
+        "cloud_devops",
+        "backend_development"
+      ],
+      "expected_competencies": [
+        "backend_development",
+        "cloud_devops"
+      ],
+      "predicted_discovered": [
+        "cloud_devops",
+        "backend_development"
+      ],
+      "expected_discovered": [
+        "cloud_devops"
+      ],
+      "false_discoveries": [],
+      "latency_ms": 0.206,
+      "is_perfect_match": true
+    },
+    {
+      "case_id": "COMP_004",
+      "answer": "I worked from Bangalore and used Jira for ticket tracking.",
+      "planned": [
+        "problem_solving"
+      ],
+      "predicted_detected": [],
+      "expected_competencies": [],
+      "predicted_discovered": [],
+      "expected_discovered": [],
+      "false_discoveries": [],
+      "latency_ms": 0.143,
+      "is_perfect_match": true
+    },
+    {
+      "case_id": "COMP_005",
+      "answer": "I instituted strict code reviews and wrote automated integration suites using Pytest.",
+      "planned": [
+        "technical_skills",
+        "problem_solving"
+      ],
+      "predicted_detected": [
+        "software_engineering"
+      ],
+      "expected_competencies": [
+        "software_engineering"
+      ],
+      "predicted_discovered": [
+        "software_engineering"
+      ],
+      "expected_discovered": [
+        "software_engineering"
+      ],
+      "false_discoveries": [],
+      "latency_ms": 0.152,
+      "is_perfect_match": true
+    },
+    {
+      "case_id": "COMP_006",
+      "answer": "I designed distributed transaction management using Kafka, deployed it on Kubernetes, and supervised 3 engineers.",
+      "planned": [
+        "system_design",
+        "technical_skills"
+      ],
+      "predicted_detected": [
+        "leadership",
+        "system_design",
+        "cloud_devops"
+      ],
+      "expected_competencies": [
+        "system_design",
+        "cloud_devops",
+        "leadership"
+      ],
+      "predicted_discovered": [
+        "leadership",
+        "cloud_devops"
+      ],
+      "expected_discovered": [
+        "cloud_devops",
+        "leadership"
+      ],
+      "false_discoveries": [],
+      "latency_ms": 0.166,
+      "is_perfect_match": true
+    },
+    {
+      "case_id": "COMP_007",
+      "answer": "I have extensive production experience with Postgres, relational database schemas, and Redis.",
+      "planned": [
+        "databases"
+      ],
+      "predicted_detected": [
+        "databases"
+      ],
+      "expected_competencies": [
+        "databases"
+      ],
+      "predicted_discovered": [],
+      "expected_discovered": [],
+      "false_discoveries": [],
+      "latency_ms": 0.152,
+      "is_perfect_match": true
+    },
+    {
+      "case_id": "COMP_008",
+      "answer": "I led developers on our squad, running daily pairing sessions and mentoring engineers.",
+      "planned": [
+        "leadership"
+      ],
+      "predicted_detected": [
+        "leadership"
+      ],
+      "expected_competencies": [
+        "leadership"
+      ],
+      "predicted_discovered": [],
+      "expected_discovered": [],
+      "false_discoveries": [],
+      "latency_ms": 0.15,
+      "is_perfect_match": true
+    },
+    {
+      "case_id": "COMP_009",
+      "answer": "I managed container orchestration on AWS EKS and built CI/CD deployment automation.",
+      "planned": [
+        "cloud_devops"
+      ],
+      "predicted_detected": [
+        "cloud_devops"
+      ],
+      "expected_competencies": [
+        "cloud_devops"
+      ],
+      "predicted_discovered": [],
+      "expected_discovered": [],
+      "false_discoveries": [],
+      "latency_ms": 0.164,
+      "is_perfect_match": true
+    },
+    {
+      "case_id": "COMP_010",
+      "answer": "Actually, I didn't design the architecture myself; I only wrote basic CRUD endpoints in Flask under senior guidance.",
+      "planned": [
+        "system_design"
+      ],
+      "predicted_detected": [
+        "backend_development"
+      ],
+      "expected_competencies": [
+        "backend_development"
+      ],
+      "predicted_discovered": [
+        "backend_development"
+      ],
+      "expected_discovered": [
+        "backend_development"
+      ],
+      "false_discoveries": [],
+      "latency_ms": 0.176,
+      "is_perfect_match": true
+    },
+    {
+      "case_id": "COMP_011",
+      "answer": "We used Slack for chat and held daily Zoom standups before lunch.",
+      "planned": [
+        "technical_skills"
+      ],
+      "predicted_detected": [],
+      "expected_competencies": [],
+      "predicted_discovered": [],
+      "expected_discovered": [],
+      "false_discoveries": [],
+      "latency_ms": 0.15,
+      "is_perfect_match": true
+    },
+    {
+      "case_id": "COMP_012",
+      "answer": "I debugged a connection pool starvation issue in PostgreSQL and resolved the memory leak.",
+      "planned": [
+        "problem_solving",
+        "databases"
+      ],
+      "predicted_detected": [
+        "databases",
+        "problem_solving"
+      ],
+      "expected_competencies": [
+        "problem_solving",
+        "databases"
+      ],
+      "predicted_discovered": [
+        "databases"
+      ],
+      "expected_discovered": [],
+      "false_discoveries": [],
+      "latency_ms": 0.141,
+      "is_perfect_match": true
+    },
+    {
+      "case_id": "COMP_013",
+      "answer": "Built high-throughput REST APIs using FastAPI, and also managed a small engineering team of four.",
+      "planned": [
+        "backend_development"
+      ],
+      "predicted_detected": [
+        "leadership",
+        "backend_development"
+      ],
+      "expected_competencies": [
+        "backend_development",
+        "leadership"
+      ],
+      "predicted_discovered": [
+        "leadership"
+      ],
+      "expected_discovered": [
+        "leadership"
+      ],
+      "false_discoveries": [],
+      "latency_ms": 0.146,
+      "is_perfect_match": true
+    },
+    {
+      "case_id": "COMP_014",
+      "answer": "I graduated from university in London and like playing badminton on weekends.",
+      "planned": [
+        "technical_skills"
+      ],
+      "predicted_detected": [],
+      "expected_competencies": [],
+      "predicted_discovered": [],
+      "expected_discovered": [],
+      "false_discoveries": [],
+      "latency_ms": 0.17,
+      "is_perfect_match": true
+    },
+    {
+      "case_id": "COMP_015",
+      "answer": "I write comprehensive Pytest unit tests, manage Git version control, and debug flakiness in CI/CD.",
+      "planned": [
+        "software_engineering",
+        "problem_solving"
+      ],
+      "predicted_detected": [
+        "cloud_devops",
+        "software_engineering"
+      ],
+      "expected_competencies": [
+        "software_engineering",
+        "cloud_devops",
+        "problem_solving"
+      ],
+      "predicted_discovered": [
+        "cloud_devops"
+      ],
+      "expected_discovered": [
+        "cloud_devops"
+      ],
+      "false_discoveries": [],
+      "latency_ms": 0.176,
+      "is_perfect_match": false
+    },
+    {
+      "case_id": "COMP_016",
+      "answer": "I discovered the root cause of the service crash and optimized the database query index.",
+      "planned": [
+        "problem_solving"
+      ],
+      "predicted_detected": [
+        "databases",
+        "problem_solving"
+      ],
+      "expected_competencies": [
+        "problem_solving",
+        "databases"
+      ],
+      "predicted_discovered": [
+        "databases"
+      ],
+      "expected_discovered": [
+        "databases"
+      ],
+      "false_discoveries": [],
+      "latency_ms": 0.152,
+      "is_perfect_match": true
+    },
+    {
+      "case_id": "COMP_017",
+      "answer": "I build microservices using Spring Boot and FastAPI.",
+      "planned": [
+        "backend_development"
+      ],
+      "predicted_detected": [
+        "system_design",
+        "backend_development"
+      ],
+      "expected_competencies": [
+        "backend_development"
+      ],
+      "predicted_discovered": [
+        "system_design"
+      ],
+      "expected_discovered": [],
+      "false_discoveries": [],
+      "latency_ms": 0.125,
+      "is_perfect_match": false
+    },
+    {
+      "case_id": "COMP_018",
+      "answer": "I use Confluence for documentation, Notion for personal notes, and Trello boards.",
+      "planned": [
+        "system_design"
+      ],
+      "predicted_detected": [],
+      "expected_competencies": [],
+      "predicted_discovered": [],
+      "expected_discovered": [],
+      "false_discoveries": [],
+      "latency_ms": 0.175,
+      "is_perfect_match": true
+    },
+    {
+      "case_id": "COMP_019",
+      "answer": "I automated infrastructure provisioning using Terraform and deployed services on Kubernetes.",
+      "planned": [
+        "cloud_devops"
+      ],
+      "predicted_detected": [
+        "cloud_devops"
+      ],
+      "expected_competencies": [
+        "cloud_devops"
+      ],
+      "predicted_discovered": [],
+      "expected_discovered": [],
+      "false_discoveries": [],
+      "latency_ms": 0.168,
+      "is_perfect_match": true
+    },
+    {
+      "case_id": "COMP_020",
+      "answer": "I spearheaded team leadership for our migration project, coached juniors, and architected the new system.",
+      "planned": [
+        "technical_skills"
+      ],
+      "predicted_detected": [
+        "leadership",
+        "system_design"
+      ],
+      "expected_competencies": [
+        "leadership",
+        "system_design"
+      ],
+      "predicted_discovered": [
+        "leadership",
+        "system_design"
+      ],
+      "expected_discovered": [
+        "leadership",
+        "system_design"
+      ],
+      "false_discoveries": [],
+      "latency_ms": 0.198,
+      "is_perfect_match": true
+    }
+  ]
+}

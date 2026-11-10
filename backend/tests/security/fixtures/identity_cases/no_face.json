@@ -1,0 +1,6 @@
+{
+  "scenario": "no_face_detected",
+  "face_count": 0,
+  "expected_status": "failed",
+  "expected_reason_code": "NO_FACE"
+}

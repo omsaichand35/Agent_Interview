@@ -1,0 +1,73 @@
+[
+  {
+    "case_id": "PAIR_001",
+    "max_score_difference": 0.08,
+    "expected_score_range": [0.75, 0.90],
+    "notes": "Answers A and B both provide Redis caching and latency measurements."
+  },
+  {
+    "case_id": "PAIR_002",
+    "max_score_difference": 0.08,
+    "expected_score_range": [0.78, 0.92],
+    "notes": "Kafka stream throughput, partitions, and consumer group scaling."
+  },
+  {
+    "case_id": "PAIR_003",
+    "max_score_difference": 0.08,
+    "expected_score_range": [0.75, 0.90],
+    "notes": "PostgreSQL connection exhaustion and PgBouncer configuration."
+  },
+  {
+    "case_id": "PAIR_004",
+    "max_score_difference": 0.08,
+    "expected_score_range": [0.75, 0.90],
+    "notes": "Mentoring junior engineers with paired coding and code reviews."
+  },
+  {
+    "case_id": "SENS_001",
+    "min_score_delta": 0.30,
+    "max_weak_score": 0.45,
+    "min_strong_score": 0.75,
+    "notes": "Strong answer should demonstrate substantial latency and architectural advantage over vague API claim."
+  },
+  {
+    "case_id": "SENS_002",
+    "min_score_delta": 0.30,
+    "max_weak_score": 0.45,
+    "min_strong_score": 0.75,
+    "notes": "Rolling deployments on EKS with HPA vs passive kubernetes keyword."
+  },
+  {
+    "case_id": "SENS_003",
+    "min_score_delta": 0.30,
+    "max_weak_score": 0.45,
+    "min_strong_score": 0.75,
+    "notes": "Concrete Pytest coverage and isolated fixtures vs vague testing claim."
+  },
+  {
+    "case_id": "UNSUPP_001",
+    "max_allowed_score": 0.35,
+    "max_evidence_quality": 0.35,
+    "must_flag_unsupported": true,
+    "notes": "10M req/sec claim with no architecture or verifiable details must be capped."
+  },
+  {
+    "case_id": "UNSUPP_002",
+    "max_allowed_score": 0.35,
+    "max_evidence_quality": 0.35,
+    "must_flag_unsupported": true,
+    "notes": "Single-handed weekend rewrite hyperbole must not be rewarded."
+  },
+  {
+    "case_id": "AGG_001",
+    "min_aggregate_score": 0.74,
+    "max_aggregate_score": 0.90,
+    "notes": "Weak first turn (0.35) combined with two strong turns (0.85, 0.88) should yield robust score >= 0.74."
+  },
+  {
+    "case_id": "AGG_002",
+    "min_aggregate_score": 0.74,
+    "max_aggregate_score": 0.92,
+    "notes": "Two stellar turns (0.90, 0.92) with an unsupported final boast (0.30) should preserve demonstrated expertise >= 0.74."
+  }
+]

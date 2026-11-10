@@ -1,0 +1,98 @@
+[
+  {
+    "case_id": "QCASE_001",
+    "expected_decision": "deepen",
+    "target_competency": "backend_development",
+    "grounded_min_relevance": 4,
+    "grounded_min_specificity": 4,
+    "ungrounded_max_relevance": 1,
+    "generic_max_specificity": 2,
+    "grounding_keywords": ["api", "latency", "redis", "caching", "40%"],
+    "hallucination_indicators": ["kubernetes", "cluster migration", "1.28", "1.29"],
+    "notes": "Directly grounded in candidate's 40% latency reduction via Redis caching."
+  },
+  {
+    "case_id": "QCASE_002",
+    "expected_decision": "deepen",
+    "target_competency": "system_design",
+    "grounded_min_relevance": 4,
+    "grounded_min_specificity": 4,
+    "ungrounded_max_relevance": 1,
+    "generic_max_specificity": 2,
+    "grounding_keywords": ["kafka", "pipeline", "events", "scale", "partitioning"],
+    "hallucination_indicators": ["react", "component lifecycle", "frontend", "hooks"],
+    "notes": "Must investigate Kafka partitioning, consumer groups, or scale rather than unmentioned frontend topics."
+  },
+  {
+    "case_id": "QCASE_003",
+    "expected_decision": "pivot",
+    "target_competency": "leadership",
+    "grounded_min_relevance": 5,
+    "grounded_min_specificity": 4,
+    "ungrounded_max_relevance": 1,
+    "generic_max_specificity": 2,
+    "grounding_keywords": ["mentored", "junior developers", "code reviews", "growth"],
+    "hallucination_indicators": ["jenkins", "android", "mobile"],
+    "notes": "Pivots to explore newly discovered mentorship/leadership signal."
+  },
+  {
+    "case_id": "QCASE_004",
+    "expected_decision": "deepen",
+    "target_competency": "databases",
+    "grounded_min_relevance": 4,
+    "grounded_min_specificity": 4,
+    "ungrounded_max_relevance": 1,
+    "generic_max_specificity": 2,
+    "grounding_keywords": ["postgresql", "aurora", "zero downtime", "replication"],
+    "hallucination_indicators": ["css", "grid", "layout", "settings page"],
+    "notes": "Deepens technical investigation into database replication cutover."
+  },
+  {
+    "case_id": "QCASE_005",
+    "expected_decision": "deepen",
+    "target_competency": "cloud_devops",
+    "grounded_min_relevance": 4,
+    "grounded_min_specificity": 4,
+    "ungrounded_max_relevance": 1,
+    "generic_max_specificity": 2,
+    "grounding_keywords": ["docker", "kubernetes", "helm", "pods", "rolling updates"],
+    "hallucination_indicators": ["usability interviews", "ux", "customer design"],
+    "notes": "Probes Kubernetes pod configurations, health checks, and rolling updates."
+  },
+  {
+    "case_id": "QCASE_006",
+    "expected_decision": "deepen",
+    "target_competency": "databases",
+    "grounded_min_relevance": 4,
+    "grounded_min_specificity": 3,
+    "ungrounded_max_relevance": 1,
+    "generic_max_specificity": 2,
+    "grounding_keywords": ["database", "queries", "engine", "schema"],
+    "hallucination_indicators": ["distributed consensus", "raft", "paxos"],
+    "notes": "Asks for concrete clarification on vague query work."
+  },
+  {
+    "case_id": "QCASE_007",
+    "expected_decision": "next_competency",
+    "target_competency": "software_engineering",
+    "grounded_min_relevance": 4,
+    "grounded_min_specificity": 3,
+    "ungrounded_max_relevance": 1,
+    "generic_max_specificity": 2,
+    "grounding_keywords": ["software quality", "testing", "move on", "next"],
+    "hallucination_indicators": ["color theme", "ide", "vscode"],
+    "notes": "Transitions smoothly to the next competency after sufficient evidence collected."
+  },
+  {
+    "case_id": "QCASE_008",
+    "expected_decision": "deepen",
+    "target_competency": "software_engineering",
+    "grounded_min_relevance": 4,
+    "grounded_min_specificity": 4,
+    "ungrounded_max_relevance": 1,
+    "generic_max_specificity": 2,
+    "grounding_keywords": ["pytest", "integration tests", "coverage", "ci/cd", "fixtures"],
+    "hallucination_indicators": ["server rack", "hardware brand", "datacenters"],
+    "notes": "Deepens automated testing rigor around mocks, fixtures, and CI pipelines."
+  }
+]

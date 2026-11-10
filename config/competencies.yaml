@@ -1,0 +1,50 @@
+competencies:
+  - id: technical_skills
+    name: Technical Skills
+    description: Ability to apply relevant programming languages, frameworks, and technical tools.
+    weight: 0.15
+
+  - id: problem_solving
+    name: Problem Solving
+    description: Ability to analyze problems and develop effective technical solutions.
+    weight: 0.12
+
+  - id: system_design
+    name: System Design
+    description: Ability to design scalable, reliable, and maintainable software systems.
+    weight: 0.12
+
+  - id: software_engineering
+    name: Software Engineering
+    description: Understanding of software development practices, testing, version control, and maintainability.
+    weight: 0.10
+
+  - id: databases
+    name: Databases
+    description: Knowledge of relational and non-relational databases, queries, optimization, and data modeling.
+    weight: 0.08
+
+  - id: cloud_devops
+    name: Cloud and DevOps
+    description: Experience with cloud platforms, containers, CI/CD, deployment, and infrastructure.
+    weight: 0.08
+
+  - id: communication
+    name: Communication
+    description: Ability to communicate technical ideas clearly and effectively.
+    weight: 0.10
+
+  - id: leadership
+    name: Leadership
+    description: Ability to lead, mentor, coordinate, or influence others toward a goal.
+    weight: 0.08
+
+  - id: adaptability
+    name: Adaptability
+    description: Ability to learn new technologies, handle changing requirements, and adapt to new situations.
+    weight: 0.08
+
+  - id: project_experience
+    name: Project Experience
+    description: Evidence of building, deploying, or contributing substantially to relevant projects.
+    weight: 0.09

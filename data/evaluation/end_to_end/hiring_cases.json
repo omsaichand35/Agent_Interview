@@ -1,0 +1,48 @@
+[
+  {
+    "case_id": "HCASE_001",
+    "job_id": "JOB_SR_BACKEND",
+    "title": "Senior Backend Distributed Systems Engineer",
+    "required_competencies": ["backend_development", "system_design", "databases", "problem_solving"],
+    "candidates": [
+      {
+        "candidate_id": "CAND_TOP_01",
+        "name": "Elena Rostova",
+        "resume_text": "Senior Distributed Systems Engineer with 6 years experience. Architected high-throughput Kafka streaming pipelines processing 20k events/sec. Partitioned 5TB PostgreSQL clusters with PgBouncer, reducing query latency by 45%. Led backend squad of 4 engineers.",
+        "identity_verified": true,
+        "interview_transcript": [
+          {"turn": 1, "question": "Can you describe how you scaled your backend data pipelines?", "answer": "I architected partitioned Kafka streams with 16 partitions across 4 consumer groups to eliminate message lag, sustaining 20,000 events/sec."},
+          {"turn": 2, "question": "How did you optimize your PostgreSQL cluster under high concurrency?", "answer": "I resolved connection starvation by tuning PgBouncer pooling parameters and adding composite B-tree indexes, dropping p95 latency from 380ms to 120ms."},
+          {"turn": 3, "question": "You mentioned leading a squad. How did you guide junior developers?", "answer": "I held weekly 1-on-1 pairing sessions and structured architectural reviews until both junior engineers successfully deployed core production services."}
+        ]
+      },
+      {
+        "candidate_id": "CAND_MID_02",
+        "name": "Marcus Vance",
+        "resume_text": "Backend Developer with 3 years experience. Built REST APIs in FastAPI and PostgreSQL. Configured Docker containers and deployed to AWS ECS.",
+        "identity_verified": true,
+        "interview_transcript": [
+          {"turn": 1, "question": "Tell me about your API development experience.", "answer": "I built REST endpoints in FastAPI with asynchronous database sessions in PostgreSQL."},
+          {"turn": 2, "question": "How did you monitor and troubleshoot latency?", "answer": "I used Prometheus to track response times and optimized our SQL queries when latency spiked."}
+        ]
+      },
+      {
+        "candidate_id": "CAND_FAIL_IDENT_03",
+        "name": "Suspicious Proxy",
+        "resume_text": "Expert in distributed computing, microservices, and high-scale cloud platforms.",
+        "identity_verified": false,
+        "identity_reason": "Face verification mismatch: confidence 0.22 below 0.60 threshold.",
+        "interview_transcript": []
+      },
+      {
+        "candidate_id": "CAND_UNQUAL_04",
+        "name": "Dave Beginner",
+        "resume_text": "Junior Frontend enthusiast with knowledge of HTML, CSS, and basic JavaScript. Interested in learning backend and databases.",
+        "identity_verified": true,
+        "interview_transcript": [
+          {"turn": 1, "question": "How do you handle backend systems and distributed caching?", "answer": "I have not worked on backend servers or distributed caching yet, but I am excited to learn."}
+        ]
+      }
+    ]
+  }
+]

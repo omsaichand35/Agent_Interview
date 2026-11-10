@@ -1,0 +1,72 @@
+{
+  "job_id": "JOB001",
+  "candidate_count": 30,
+  "shortlist_k": 10,
+  "ground_truth_relevant_count": 10,
+  "baseline": {
+    "precision_at_10": 0.9,
+    "recall_at_10": 0.9,
+    "ndcg_at_10": 0.8938,
+    "spearman_correlation": 0.8114,
+    "kendall_tau": 0.7532,
+    "mean_reciprocal_rank": 1.0,
+    "evidence_validity": 0.0
+  },
+  "ai_system": {
+    "precision_at_10": 1.0,
+    "recall_at_10": 1.0,
+    "ndcg_at_10": 0.9875,
+    "spearman_correlation": 0.9502,
+    "kendall_tau": 0.8535,
+    "mean_reciprocal_rank": 1.0,
+    "evidence_validity": 0.9902,
+    "unsupported_claims_caught": 2
+  },
+  "comparison": {
+    "precision_at_10_delta": 0.1,
+    "recall_at_10_delta": 0.1,
+    "ndcg_at_10_delta": 0.0937,
+    "spearman_delta": 0.1388,
+    "evidence_validity_delta": 0.9902
+  },
+  "baseline_shortlist": [
+    "C001",
+    "C029",
+    "C005",
+    "C003",
+    "C002",
+    "C010",
+    "C004",
+    "C009",
+    "C007",
+    "C008"
+  ],
+  "ai_shortlist": [
+    "C003",
+    "C001",
+    "C007",
+    "C002",
+    "C008",
+    "C004",
+    "C010",
+    "C005",
+    "C006",
+    "C009"
+  ],
+  "unsupported_claims_detected": [
+    {
+      "quote": "Led a team of 10 engineers.",
+      "support_score": 1,
+      "support_level": "UNSUPPORTED",
+      "reason": "Direct evidence quote not found in candidate resume text",
+      "candidate_id": "C029"
+    },
+    {
+      "quote": "Architected petabyte scale distributed streaming platform with 99.999% availability.",
+      "support_score": 1,
+      "support_level": "UNSUPPORTED",
+      "reason": "Direct evidence quote not found in candidate resume text",
+      "candidate_id": "C030"
+    }
+  ]
+}

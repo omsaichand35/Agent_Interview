@@ -1,0 +1,77 @@
+{
+  "job_id": "JOB001",
+  "title": "Senior Backend Engineer",
+  "description": "We are seeking a Senior Backend Engineer to architect, build, and scale high-throughput distributed microservices. The ideal candidate will have extensive experience in Python (FastAPI/Django), PostgreSQL, Redis, Docker, and Kubernetes, coupled with strong system design, problem-solving, and engineering leadership skills.",
+  "required_skills": [
+    "Python",
+    "FastAPI",
+    "PostgreSQL",
+    "Docker",
+    "Kubernetes",
+    "Redis",
+    "Distributed Systems",
+    "System Design"
+  ],
+  "competencies": [
+    {
+      "id": "technical_skills",
+      "name": "Technical Skills",
+      "description": "Python, FastAPI, modern frameworks, APIs",
+      "weight": 0.15
+    },
+    {
+      "id": "problem_solving",
+      "name": "Problem Solving",
+      "description": "Analytical thinking, debugging high load bottlenecks, race conditions",
+      "weight": 0.12
+    },
+    {
+      "id": "system_design",
+      "name": "System Design",
+      "description": "Scalable distributed architecture, microservices, high availability",
+      "weight": 0.12
+    },
+    {
+      "id": "software_engineering",
+      "name": "Software Engineering",
+      "description": "Clean code, testing with Pytest, CI/CD, version control",
+      "weight": 0.10
+    },
+    {
+      "id": "databases",
+      "name": "Databases",
+      "description": "PostgreSQL, data modeling, indexing, Redis caching",
+      "weight": 0.08
+    },
+    {
+      "id": "cloud_devops",
+      "name": "Cloud and DevOps",
+      "description": "Docker, Kubernetes, AWS/GCP, container orchestration",
+      "weight": 0.08
+    },
+    {
+      "id": "communication",
+      "name": "Communication",
+      "description": "Technical documentation, cross-functional collaboration, ADRs",
+      "weight": 0.10
+    },
+    {
+      "id": "leadership",
+      "name": "Leadership",
+      "description": "Mentorship, leading squads, code reviews, design leadership",
+      "weight": 0.08
+    },
+    {
+      "id": "adaptability",
+      "name": "Adaptability",
+      "description": "Learning curve, adapting to complex systems",
+      "weight": 0.08
+    },
+    {
+      "id": "project_experience",
+      "name": "Project Experience",
+      "description": "Production experience with scalable backend systems",
+      "weight": 0.09
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+[
+  {
+    "case_id": "HCASE_001",
+    "expected_ranking": ["CAND_TOP_01", "CAND_MID_02", "CAND_FAIL_IDENT_03", "CAND_UNQUAL_04"],
+    "expected_shortlist": ["CAND_TOP_01", "CAND_MID_02"],
+    "expected_disqualified": ["CAND_UNQUAL_04"]
+  }
+]

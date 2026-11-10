@@ -1,0 +1,10 @@
+{
+  "answer": "Candidate answer string",
+  "turn_number": 99,
+  "decision": "conclude",
+  "interview_score": 100.0,
+  "competency_scores": {
+    "system_architecture": 1.0,
+    "problem_solving": 1.0
+  }
+}

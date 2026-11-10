@@ -1,0 +1,8 @@
+{
+  "scenario": "borderline_similarity",
+  "confidence": 0.58,
+  "expected_status": "review",
+  "expected_reason_code": "LOW_CONFIDENCE",
+  "threshold_pass": 0.70,
+  "threshold_review": 0.50
+}

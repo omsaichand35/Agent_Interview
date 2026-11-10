@@ -1,0 +1,17 @@
+openai-whisper
+pyttsx3
+fastapi
+uvicorn
+python-multipart
+PyMuPDF>=1.24,<2
+pydantic
+pydantic-settings
+SQLAlchemy
+psycopg[binary]
+alembic
+python-jose[cryptography]
+passlib[bcrypt]
+bcrypt
+email-validator
+pytest
+pytest-cov

@@ -1,0 +1,261 @@
+[
+  {
+    "case_id": "CASE001",
+    "candidate_id": "C001",
+    "competency": "system_design",
+    "resume_snippet": "Alex Mercer\nArchitected partitioned PostgreSQL clusters with Redis read-through caching, reducing p99 latency from 450ms to 28ms.\nDeployed fault-tolerant services on AWS EKS Kubernetes.",
+    "evidence": "Architected partitioned PostgreSQL clusters with Redis read-through caching, reducing p99 latency from 450ms to 28ms."
+  },
+  {
+    "case_id": "CASE002",
+    "candidate_id": "C001",
+    "competency": "backend_development",
+    "resume_snippet": "Re-architected legacy monolithic APIs into high-throughput FastAPI microservices handling 45,000 req/sec.",
+    "evidence": "Re-architected legacy monolithic APIs into high-throughput FastAPI microservices handling 45,000 req/sec."
+  },
+  {
+    "case_id": "CASE003",
+    "candidate_id": "C001",
+    "competency": "leadership",
+    "resume_snippet": "Led a team of 6 engineers to re-architect legacy monolithic APIs.\nMentored junior developers and instituted code review standards across the organization.",
+    "evidence": "Led a team of 6 engineers to re-architect legacy monolithic APIs."
+  },
+  {
+    "case_id": "CASE004",
+    "candidate_id": "C002",
+    "competency": "distributed_systems",
+    "resume_snippet": "Designed distributed transaction management workflows using Kafka and FastAPI, ensuring strict idempotency and exactly-once semantics.",
+    "evidence": "Designed distributed transaction management workflows using Kafka and FastAPI, ensuring strict idempotency and exactly-once semantics."
+  },
+  {
+    "case_id": "CASE005",
+    "candidate_id": "C002",
+    "competency": "databases",
+    "resume_snippet": "Optimized complex relational queries and database schema migrations on PostgreSQL databases exceeding 10TB.",
+    "evidence": "Optimized complex relational queries and database schema migrations on PostgreSQL databases exceeding 10TB."
+  },
+  {
+    "case_id": "CASE006",
+    "candidate_id": "C003",
+    "competency": "problem_solving",
+    "resume_snippet": "Solved critical memory leaks and database connection pool starvation under peak load, improving system uptime to 99.99%.",
+    "evidence": "Solved critical memory leaks and database connection pool starvation under peak load, improving system uptime to 99.99%."
+  },
+  {
+    "case_id": "CASE007",
+    "candidate_id": "C004",
+    "competency": "backend_development",
+    "resume_snippet": "Built a Spring Boot REST API used by 20,000 users.",
+    "evidence": "Built a Spring Boot REST API used by 20,000 users."
+  },
+  {
+    "case_id": "CASE008",
+    "candidate_id": "C005",
+    "competency": "python",
+    "resume_snippet": "Built a Python ETL pipeline processing 5 million records per day.",
+    "evidence": "Built a Python ETL pipeline processing 5 million records per day."
+  },
+  {
+    "case_id": "CASE009",
+    "candidate_id": "C006",
+    "competency": "software_engineering",
+    "resume_snippet": "Championed unit and integration testing coverage, bringing backend repo test coverage from 55% to 88% with Pytest and GitLab CI.",
+    "evidence": "Championed unit and integration testing coverage, bringing backend repo test coverage from 55% to 88% with Pytest and GitLab CI."
+  },
+  {
+    "case_id": "CASE010",
+    "candidate_id": "C007",
+    "competency": "cloud_devops",
+    "resume_snippet": "Deployed serverless and containerized APIs using FastAPI, Docker, and PostgreSQL on AWS (EKS, RDS, Lambda) with Terraform IAC.",
+    "evidence": "Deployed serverless and containerized APIs using FastAPI, Docker, and PostgreSQL on AWS (EKS, RDS, Lambda) with Terraform IAC."
+  },
+  {
+    "case_id": "CASE011",
+    "candidate_id": "C011",
+    "competency": "distributed_systems",
+    "resume_snippet": "Software Engineer with 4 years experience. Worked on backend systems.",
+    "evidence": "Worked on backend systems."
+  },
+  {
+    "case_id": "CASE012",
+    "candidate_id": "C012",
+    "competency": "databases",
+    "resume_snippet": "Assisted in writing SQL queries and modifying database tables.",
+    "evidence": "Assisted in writing SQL queries and modifying database tables."
+  },
+  {
+    "case_id": "CASE013",
+    "candidate_id": "C013",
+    "competency": "system_design",
+    "resume_snippet": "Full Stack Developer. Attended weekly architecture design discussions.",
+    "evidence": "Attended weekly architecture design discussions."
+  },
+  {
+    "case_id": "CASE014",
+    "candidate_id": "C014",
+    "competency": "cloud_devops",
+    "resume_snippet": "Helped senior DevOps engineers configure local staging containers.",
+    "evidence": "Helped senior DevOps engineers configure local staging containers."
+  },
+  {
+    "case_id": "CASE015",
+    "candidate_id": "C015",
+    "competency": "software_engineering",
+    "resume_snippet": "Used Git for team collaboration and pushed commits to remote repository.",
+    "evidence": "Used Git for team collaboration and pushed commits to remote repository."
+  },
+  {
+    "case_id": "CASE016",
+    "candidate_id": "C016",
+    "competency": "leadership",
+    "resume_snippet": "Organized team lunches and coordinated bi-weekly social events.",
+    "evidence": "Organized team lunches and coordinated bi-weekly social events."
+  },
+  {
+    "case_id": "CASE017",
+    "candidate_id": "C017",
+    "competency": "python",
+    "resume_snippet": "Skills: Python, Django, HTML, CSS. I know Python.",
+    "evidence": "I know Python."
+  },
+  {
+    "case_id": "CASE018",
+    "candidate_id": "C018",
+    "competency": "cloud_devops",
+    "resume_snippet": "Technical Skills: Docker, Kubernetes, AWS, Linux.",
+    "evidence": "Docker, Kubernetes, AWS, Linux."
+  },
+  {
+    "case_id": "CASE019",
+    "candidate_id": "C019",
+    "competency": "databases",
+    "resume_snippet": "Core competencies: PostgreSQL, MySQL, Redis, SQLite.",
+    "evidence": "PostgreSQL, MySQL, Redis, SQLite."
+  },
+  {
+    "case_id": "CASE020",
+    "candidate_id": "C020",
+    "competency": "system_design",
+    "resume_snippet": "Built simple CRUD forms in Django with SQLite.",
+    "evidence": "Built simple CRUD forms in Django with SQLite."
+  },
+  {
+    "case_id": "CASE021",
+    "candidate_id": "C021",
+    "competency": "leadership",
+    "resume_snippet": "Java, Python, SQL",
+    "evidence": "Java, Python, SQL"
+  },
+  {
+    "case_id": "CASE022",
+    "candidate_id": "C025",
+    "competency": "system_design",
+    "resume_snippet": "Conducted user interviews, created journey maps, and designed interactive prototypes in Figma.",
+    "evidence": "Conducted user interviews, created journey maps, and designed interactive prototypes in Figma."
+  },
+  {
+    "case_id": "CASE023",
+    "candidate_id": "C026",
+    "competency": "backend_development",
+    "resume_snippet": "Digital Marketing Specialist managing paid search advertising, content marketing, and Google Analytics.",
+    "evidence": "Digital Marketing Specialist managing paid search advertising, content marketing, and Google Analytics."
+  },
+  {
+    "case_id": "CASE024",
+    "candidate_id": "C027",
+    "competency": "technical_skills",
+    "resume_snippet": "Technical recruiter sourcing software engineers and coordinating interview pipelines using LinkedIn Recruiter.",
+    "evidence": "Technical recruiter sourcing software engineers and coordinating interview pipelines using LinkedIn Recruiter."
+  },
+  {
+    "case_id": "CASE025",
+    "candidate_id": "C028",
+    "competency": "system_design",
+    "resume_snippet": "Customer support specialist responding to tier-2 help desk tickets in Zendesk.",
+    "evidence": "Customer support specialist responding to tier-2 help desk tickets in Zendesk."
+  },
+  {
+    "case_id": "CASE026",
+    "candidate_id": "C019",
+    "competency": "distributed_systems",
+    "resume_snippet": "Solely focused on standalone single-server desktop scripts; avoided distributed services or microservices.",
+    "evidence": "Solely focused on standalone single-server desktop scripts; avoided distributed services or microservices."
+  },
+  {
+    "case_id": "CASE027",
+    "candidate_id": "C024",
+    "competency": "software_engineering",
+    "resume_snippet": "Conducted manual UI verification only; did not implement automated unit testing or CI/CD pipelines.",
+    "evidence": "Conducted manual UI verification only; did not implement automated unit testing or CI/CD pipelines."
+  },
+  {
+    "case_id": "CASE028",
+    "candidate_id": "C029",
+    "competency": "leadership",
+    "resume_snippet": "Python, Java, SQL",
+    "evidence": "Led a team of 10 engineers."
+  },
+  {
+    "case_id": "CASE029",
+    "candidate_id": "C030",
+    "competency": "system_design",
+    "resume_snippet": "Junior Programmer with skills in Python, Docker, Kubernetes, Redis, C++, and HTML.",
+    "evidence": "Architected petabyte scale distributed streaming platform with 99.999% availability."
+  },
+  {
+    "case_id": "CASE030",
+    "candidate_id": "C028",
+    "competency": "cloud_devops",
+    "resume_snippet": "Brian Miller\nCustomer Support Lead with 5 years managing tier-2 technical help desk support tickets in Zendesk.",
+    "evidence": "Scaled Kubernetes clusters to 500 nodes across multi-cloud infrastructure."
+  },
+  {
+    "case_id": "CASE031",
+    "candidate_id": "C022",
+    "competency": "system_design",
+    "resume_snippet": "QA Automation Engineer writing browser tests with Selenium and Pytest.",
+    "evidence": "Designed high-throughput fault-tolerant consensus protocol."
+  },
+  {
+    "case_id": "CASE032",
+    "candidate_id": "C011",
+    "competency": "system_design",
+    "resume_snippet": "Familiar with microservices architectures, Kafka message brokers, and distributed caching principles.",
+    "evidence": "Familiar with microservices architectures, Kafka message brokers, and distributed caching principles."
+  },
+  {
+    "case_id": "CASE033",
+    "candidate_id": "C012",
+    "competency": "cloud_devops",
+    "resume_snippet": "Exposure to Kubernetes cluster deployments and AWS CloudWatch monitoring in staging environments.",
+    "evidence": "Exposure to Kubernetes cluster deployments and AWS CloudWatch monitoring in staging environments."
+  },
+  {
+    "case_id": "CASE034",
+    "candidate_id": "C013",
+    "competency": "databases",
+    "resume_snippet": "Assisted with PostgreSQL database schema migration and index tuning under senior DBA supervision.",
+    "evidence": "Assisted with PostgreSQL database schema migration and index tuning under senior DBA supervision."
+  },
+  {
+    "case_id": "CASE035",
+    "candidate_id": "C014",
+    "competency": "backend_development",
+    "resume_snippet": "Worked alongside senior engineers who built the core payment integration gateway in FastAPI.",
+    "evidence": "Worked alongside senior engineers who built the core payment integration gateway in FastAPI."
+  },
+  {
+    "case_id": "CASE036",
+    "candidate_id": "C015",
+    "competency": "distributed_systems",
+    "resume_snippet": "Interested in learning distributed systems, event-driven streaming, and high-concurrency architectures.",
+    "evidence": "Interested in learning distributed systems, event-driven streaming, and high-concurrency architectures."
+  },
+  {
+    "case_id": "CASE037",
+    "candidate_id": "C016",
+    "competency": "technical_skills",
+    "resume_snippet": "Currently learning FastAPI, asynchronous I/O, and Redis caching through self-directed online courses.",
+    "evidence": "Currently learning FastAPI, asynchronous I/O, and Redis caching through self-directed online courses."
+  }
+]

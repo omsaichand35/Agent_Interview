@@ -1,0 +1,236 @@
+[
+  {
+    "case_id": "COMP_001",
+    "expected_competencies": ["problem_solving", "backend_development", "leadership"],
+    "expected_discovered": ["leadership"],
+    "irrelevant_noise": [],
+    "normalization_targets": {
+      "mentored two junior developers": "leadership",
+      "optimized our API": "problem_solving"
+    },
+    "expected_decision": "pivot",
+    "notes": "Candidate revealed unexpected leadership/mentoring during technical problem solving question; agent should discover and pivot/deepen."
+  },
+  {
+    "case_id": "COMP_002",
+    "expected_competencies": ["system_design", "databases", "problem_solving"],
+    "expected_discovered": ["databases"],
+    "irrelevant_noise": [],
+    "normalization_targets": {
+      "PostgreSQL": "databases",
+      "Redis": "databases",
+      "architected": "system_design"
+    },
+    "expected_decision": "deepen",
+    "notes": "Direct system design metrics with discovered database cluster depth."
+  },
+  {
+    "case_id": "COMP_003",
+    "expected_competencies": ["backend_development", "cloud_devops"],
+    "expected_discovered": ["cloud_devops"],
+    "irrelevant_noise": [],
+    "normalization_targets": {
+      "FastAPI": "backend_development",
+      "Docker": "cloud_devops",
+      "AWS": "cloud_devops"
+    },
+    "expected_decision": "pivot",
+    "notes": "Unexpected discovery of cloud and devops skills during framework discussion."
+  },
+  {
+    "case_id": "COMP_004",
+    "expected_competencies": [],
+    "expected_discovered": [],
+    "irrelevant_noise": ["Bangalore", "Jira"],
+    "normalization_targets": {},
+    "expected_decision": "deepen",
+    "notes": "False discovery test: 'Bangalore' (location) and 'Jira' (project tracking tool) must NOT become competencies."
+  },
+  {
+    "case_id": "COMP_005",
+    "expected_competencies": ["software_engineering"],
+    "expected_discovered": ["software_engineering"],
+    "irrelevant_noise": [],
+    "normalization_targets": {
+      "code reviews": "software_engineering",
+      "Pytest": "software_engineering"
+    },
+    "expected_decision": "pivot",
+    "notes": "Testing and code review rigor discovered."
+  },
+  {
+    "case_id": "COMP_006",
+    "expected_competencies": ["system_design", "cloud_devops", "leadership"],
+    "expected_discovered": ["cloud_devops", "leadership"],
+    "irrelevant_noise": [],
+    "normalization_targets": {
+      "distributed transaction management": "system_design",
+      "Kubernetes": "cloud_devops",
+      "supervised 3 engineers": "leadership"
+    },
+    "expected_decision": "pivot",
+    "notes": "Multiple competencies in one answer (system design, cloud devops, leadership)."
+  },
+  {
+    "case_id": "COMP_007",
+    "expected_competencies": ["databases"],
+    "expected_discovered": [],
+    "irrelevant_noise": [],
+    "normalization_targets": {
+      "Postgres": "databases",
+      "relational database": "databases",
+      "Redis": "databases"
+    },
+    "expected_decision": "deepen",
+    "notes": "Competency normalization test: 'Postgres' and 'relational database' both normalize to 'databases'."
+  },
+  {
+    "case_id": "COMP_008",
+    "expected_competencies": ["leadership"],
+    "expected_discovered": [],
+    "irrelevant_noise": [],
+    "normalization_targets": {
+      "led developers": "leadership",
+      "mentoring engineers": "leadership"
+    },
+    "expected_decision": "deepen",
+    "notes": "Competency normalization test: 'led developers' and 'mentoring engineers' both normalize to 'leadership'."
+  },
+  {
+    "case_id": "COMP_009",
+    "expected_competencies": ["cloud_devops"],
+    "expected_discovered": [],
+    "irrelevant_noise": [],
+    "normalization_targets": {
+      "container orchestration": "cloud_devops",
+      "AWS EKS": "cloud_devops",
+      "CI/CD": "cloud_devops"
+    },
+    "expected_decision": "deepen",
+    "notes": "Competency normalization test: 'container orchestration' and 'AWS EKS' normalize to 'cloud_devops'."
+  },
+  {
+    "case_id": "COMP_010",
+    "expected_competencies": ["backend_development"],
+    "expected_discovered": ["backend_development"],
+    "irrelevant_noise": [],
+    "normalization_targets": {
+      "Flask": "backend_development",
+      "CRUD endpoints": "backend_development"
+    },
+    "expected_decision": "deepen",
+    "notes": "Contradiction test: candidate disclaimed system design and admitted only basic CRUD; must not award system_design."
+  },
+  {
+    "case_id": "COMP_011",
+    "expected_competencies": [],
+    "expected_discovered": [],
+    "irrelevant_noise": ["Slack", "Zoom", "lunch"],
+    "normalization_targets": {},
+    "expected_decision": "deepen",
+    "notes": "False discovery test: routine chat/video tools (Slack, Zoom) and meals must NOT become competencies."
+  },
+  {
+    "case_id": "COMP_012",
+    "expected_competencies": ["problem_solving", "databases"],
+    "expected_discovered": [],
+    "irrelevant_noise": [],
+    "normalization_targets": {
+      "connection pool starvation": "problem_solving",
+      "PostgreSQL": "databases"
+    },
+    "expected_decision": "deepen",
+    "notes": "Planned competencies problem_solving and databases demonstrated directly."
+  },
+  {
+    "case_id": "COMP_013",
+    "expected_competencies": ["backend_development", "leadership"],
+    "expected_discovered": ["leadership"],
+    "irrelevant_noise": [],
+    "normalization_targets": {
+      "REST APIs": "backend_development",
+      "managed a small engineering team": "leadership"
+    },
+    "expected_decision": "pivot",
+    "notes": "Unexpected management/leadership discovered during API discussion."
+  },
+  {
+    "case_id": "COMP_014",
+    "expected_competencies": [],
+    "expected_discovered": [],
+    "irrelevant_noise": ["London", "badminton"],
+    "normalization_targets": {},
+    "expected_decision": "deepen",
+    "notes": "False discovery test: city 'London' and hobby 'badminton' must NOT become competencies."
+  },
+  {
+    "case_id": "COMP_015",
+    "expected_competencies": ["software_engineering", "cloud_devops", "problem_solving"],
+    "expected_discovered": ["cloud_devops"],
+    "irrelevant_noise": [],
+    "normalization_targets": {
+      "Pytest": "software_engineering",
+      "CI/CD": "cloud_devops",
+      "debug": "problem_solving"
+    },
+    "expected_decision": "deepen",
+    "notes": "Multiple competencies in one answer."
+  },
+  {
+    "case_id": "COMP_016",
+    "expected_competencies": ["problem_solving", "databases"],
+    "expected_discovered": ["databases"],
+    "irrelevant_noise": [],
+    "normalization_targets": {
+      "root cause": "problem_solving",
+      "database": "databases"
+    },
+    "expected_decision": "pivot",
+    "notes": "Database indexing discovered while discussing incident resolution."
+  },
+  {
+    "case_id": "COMP_017",
+    "expected_competencies": ["backend_development"],
+    "expected_discovered": [],
+    "irrelevant_noise": [],
+    "normalization_targets": {
+      "Spring Boot": "backend_development",
+      "FastAPI": "backend_development"
+    },
+    "expected_decision": "deepen",
+    "notes": "Normalization: 'Spring Boot' and 'FastAPI' normalize to 'backend_development'."
+  },
+  {
+    "case_id": "COMP_018",
+    "expected_competencies": [],
+    "expected_discovered": [],
+    "irrelevant_noise": ["Confluence", "Notion", "Trello"],
+    "normalization_targets": {},
+    "expected_decision": "deepen",
+    "notes": "False discovery test: office/note-taking tools (Confluence, Notion, Trello) must NOT become competencies."
+  },
+  {
+    "case_id": "COMP_019",
+    "expected_competencies": ["cloud_devops"],
+    "expected_discovered": [],
+    "irrelevant_noise": [],
+    "normalization_targets": {
+      "Terraform": "cloud_devops",
+      "Kubernetes": "cloud_devops"
+    },
+    "expected_decision": "deepen",
+    "notes": "Planned competency cloud_devops directly evidenced."
+  },
+  {
+    "case_id": "COMP_020",
+    "expected_competencies": ["leadership", "system_design"],
+    "expected_discovered": ["leadership", "system_design"],
+    "irrelevant_noise": [],
+    "normalization_targets": {
+      "team leadership": "leadership",
+      "architected": "system_design"
+    },
+    "expected_decision": "pivot",
+    "notes": "Unexpected discovery of both leadership and system design."
+  }
+]

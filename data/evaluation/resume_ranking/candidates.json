@@ -1,0 +1,252 @@
+[
+  {
+    "candidate_id": "C001",
+    "name": "Alex Mercer",
+    "title": "Senior Backend Architect",
+    "experience_years": 8,
+    "skills": ["Python", "FastAPI", "PostgreSQL", "Docker", "Kubernetes", "Redis", "Distributed Systems", "System Design"],
+    "resume_text": "Alex Mercer\nSenior Backend Architect with 8 years of experience building high-scale distributed systems in Python and Go.\nLed a team of 6 engineers to re-architect legacy monolithic APIs into high-throughput FastAPI microservices handling 45,000 req/sec.\nArchitected partitioned PostgreSQL clusters with Redis read-through caching, reducing p99 latency from 450ms to 28ms.\nDeployed fault-tolerant services on AWS EKS Kubernetes with automated CI/CD pipelines, Prometheus monitoring, and zero-downtime rollouts.\nMentored junior developers and instituted code review standards across the backend engineering organization."
+  },
+  {
+    "candidate_id": "C002",
+    "name": "Elena Rostova",
+    "title": "Staff Backend Engineer",
+    "experience_years": 9,
+    "skills": ["Python", "Django", "FastAPI", "Distributed Systems", "PostgreSQL", "Kafka", "Docker", "System Design"],
+    "resume_text": "Elena Rostova\nStaff Backend Engineer with 9 years specializing in event-driven systems and backend infrastructure.\nDesigned distributed transaction management workflows using Kafka and FastAPI, ensuring strict idempotency and exactly-once semantics.\nOptimized complex relational queries and database schema migrations on PostgreSQL databases exceeding 10TB.\nSpearheaded engineering best practices, integration testing suites, and design reviews across 4 cross-functional squads.\nExtensive hands-on expertise in cloud infrastructure, containerization with Docker, and observability with OpenTelemetry."
+  },
+  {
+    "candidate_id": "C003",
+    "name": "Marcus Vance",
+    "title": "Lead Software Engineer",
+    "experience_years": 7,
+    "skills": ["Python", "FastAPI", "PostgreSQL", "System Design", "Kubernetes", "Redis", "Problem Solving"],
+    "resume_text": "Marcus Vance\nLead Software Engineer with 7 years developing resilient backend cloud applications in Python.\nDesigned and launched real-time analytics microservices using FastAPI, Redis caching, and PostgreSQL persistence.\nSolved critical memory leaks and database connection pool starvation under peak load, improving system uptime to 99.99%.\nLed technical architecture design sessions and authored architectural decision records (ADRs) for multi-tenant SaaS services.\nSupervised 4 software engineers and collaborated closely with product managers and DevOps teams on Kubernetes deployments."
+  },
+  {
+    "candidate_id": "C004",
+    "name": "Priya Sharma",
+    "title": "Senior Backend Developer",
+    "experience_years": 6,
+    "skills": ["Python", "FastAPI", "PostgreSQL", "Docker", "AWS", "Redis", "Microservices"],
+    "resume_text": "Priya Sharma\nSenior Backend Developer with 6 years experience in Python backend engineering and RESTful API development.\nBuilt scalable core payment integration APIs using FastAPI and PostgreSQL, processing over $50M in annual transactions.\nIntegrated Redis for distributed session locking and rate limiting across microservice instances.\nConfigured Docker containers and AWS ECS task definitions for automated staging and production releases.\nConducted weekly design pairing sessions and authored technical documentation for third-party developer integrations."
+  },
+  {
+    "candidate_id": "C005",
+    "name": "David Kim",
+    "title": "Senior Software Engineer - Platform",
+    "experience_years": 7,
+    "skills": ["Python", "Distributed Systems", "PostgreSQL", "Docker", "Kubernetes", "FastAPI", "System Design"],
+    "resume_text": "David Kim\nSenior Software Engineer with 7 years of platform and backend systems experience.\nImplemented robust data ingestion pipelines in Python handling millions of events daily into PostgreSQL and Elasticsearch.\nArchitected scalable backend services with FastAPI and gRPC, establishing asynchronous message queues using Celery and RabbitMQ.\nContainerized all platform services with Docker and managed helm charts for Kubernetes production clusters on GCP.\nDemonstrated strong problem solving in debugging distributed race conditions and optimizing SQL query execution plans."
+  },
+  {
+    "candidate_id": "C006",
+    "name": "Sarah Jenkins",
+    "title": "Senior Backend Engineer",
+    "experience_years": 6,
+    "skills": ["Python", "Django", "FastAPI", "PostgreSQL", "Docker", "CI/CD", "System Design"],
+    "resume_text": "Sarah Jenkins\nSenior Backend Engineer with 6 years building secure, scalable SaaS applications.\nDeveloped REST APIs in FastAPI and Django with robust authentication, role-based access control, and PostgreSQL schemas.\nMigrated cloud infrastructure to Docker containers with GitLab CI/CD automation, decreasing deployment cycle time by 60%.\nWorked closely with frontend and mobile teams to define comprehensive OpenAPI specifications and contract tests.\nChampioned unit and integration testing coverage, bringing backend repo test coverage from 55% to 88%."
+  },
+  {
+    "candidate_id": "C007",
+    "name": "Vikram Patel",
+    "title": "Principal Systems Engineer",
+    "experience_years": 10,
+    "skills": ["Python", "System Design", "Distributed Systems", "PostgreSQL", "Kubernetes", "Cloud DevOps", "Leadership"],
+    "resume_text": "Vikram Patel\nPrincipal Systems Engineer with 10 years of experience designing mission-critical enterprise systems.\nAuthored high-level system design for distributed event brokers and backend API gateways utilizing Python and C++.\nMentored engineering leads, conducted architecture reviews, and drove company-wide adoption of containerized microservices on Kubernetes.\nDesigned highly available PostgreSQL database failover mechanisms across multiple cloud availability zones.\nDemonstrated top-tier problem solving, technical communication, and strategic engineering planning."
+  },
+  {
+    "candidate_id": "C008",
+    "name": "Chloe Bennett",
+    "title": "Senior Cloud Backend Engineer",
+    "experience_years": 5,
+    "skills": ["Python", "FastAPI", "Docker", "Kubernetes", "PostgreSQL", "AWS", "DevOps"],
+    "resume_text": "Chloe Bennett\nSenior Cloud Backend Engineer with 5 years experience specializing in cloud-native Python microservices.\nDeveloped serverless and containerized APIs using FastAPI, Docker, and PostgreSQL on AWS (EKS, RDS, Lambda).\nImplemented Terraform infrastructure-as-code and GitHub Actions CI/CD pipelines for zero-downtime continuous deployment.\nTroubleshot high-load concurrency bottlenecks and optimized database connection pooling using PgBouncer.\nStrong collaborator with cross-functional product, security, and QA teams."
+  },
+  {
+    "candidate_id": "C009",
+    "name": "Lucas Silva",
+    "title": "Senior Backend Developer",
+    "experience_years": 6,
+    "skills": ["Python", "FastAPI", "PostgreSQL", "Redis", "Docker", "Software Engineering"],
+    "resume_text": "Lucas Silva\nSenior Backend Developer with 6 years of expertise in high-concurrency Python applications.\nBuilt asynchronous REST services with FastAPI, SQLAlchemy, and PostgreSQL, supporting 20,000 active concurrent users.\nImplemented Redis pub/sub channels and caching layers to minimize database roundtrips for real-time dashboards.\nDeveloped automated end-to-end integration test suites with Pytest and Docker Compose in GitLab CI.\nMentored 3 junior software engineers and led sprint planning and code quality reviews."
+  },
+  {
+    "candidate_id": "C010",
+    "name": "Amira Al-Mansoor",
+    "title": "Senior Software Engineer",
+    "experience_years": 7,
+    "skills": ["Python", "Distributed Systems", "FastAPI", "PostgreSQL", "Docker", "System Design"],
+    "resume_text": "Amira Al-Mansoor\nSenior Software Engineer with 7 years building scalable web services and distributed data backends.\nArchitected resilient REST and WebSocket services using FastAPI, PostgreSQL, and Docker.\nSolved distributed state synchronization challenges across multi-region server clusters.\nCollaborated with product leadership to translate business objectives into scalable software architecture and technical roadmap.\nConducted hiring interviews, pair programming, and engineering onboarding workshops."
+  },
+  {
+    "candidate_id": "C011",
+    "name": "James Thornton",
+    "title": "Software Engineer II - Backend",
+    "experience_years": 4,
+    "skills": ["Python", "Django", "PostgreSQL", "Docker", "REST API"],
+    "resume_text": "James Thornton\nSoftware Engineer with 4 years experience developing web applications using Python and Django.\nBuilt REST API endpoints for user account management and billing workflows with PostgreSQL backends.\nContainerized applications using Docker and assisted DevOps in configuring staging environments.\nParticipated in daily standups, code reviews, and sprint retrospectives within an Agile team."
+  },
+  {
+    "candidate_id": "C012",
+    "name": "Rachel Green",
+    "title": "Backend Software Developer",
+    "experience_years": 3,
+    "skills": ["Python", "Flask", "FastAPI", "PostgreSQL", "Git"],
+    "resume_text": "Rachel Green\nBackend Software Developer with 3 years experience writing Python web services with Flask and FastAPI.\nImplemented CRUD endpoints backed by PostgreSQL and wrote automated unit tests with Pytest.\nAssisted in designing relational database schemas and optimizing slow SQL queries.\nComfortable working in cross-functional agile teams and using Git version control."
+  },
+  {
+    "candidate_id": "C013",
+    "name": "Carlos Gomez",
+    "title": "Full Stack Developer",
+    "experience_years": 4,
+    "skills": ["Python", "Django", "JavaScript", "React", "PostgreSQL", "Docker"],
+    "resume_text": "Carlos Gomez\nFull Stack Developer with 4 years building web apps using React frontend and Django/Python backend.\nCreated backend endpoints for data manipulation and integrated React client components.\nMaintained PostgreSQL database migrations and configured Docker development environments.\nWorked with design and product teams to deliver responsive user experiences."
+  },
+  {
+    "candidate_id": "C014",
+    "name": "Mei Lin",
+    "title": "Software Engineer",
+    "experience_years": 3,
+    "skills": ["Python", "FastAPI", "SQL", "Docker", "Unit Testing"],
+    "resume_text": "Mei Lin\nSoftware Engineer with 3 years experience in Python and FastAPI microservices development.\nDesigned customer notification services integrating email and SMS APIs with asynchronous background tasks.\nWrote database queries and schema definitions using SQLAlchemy and Dockerized local development setups.\nActively participated in code reviews and sprint delivery."
+  },
+  {
+    "candidate_id": "C015",
+    "name": "Daniel Fischer",
+    "title": "Backend Developer",
+    "experience_years": 4,
+    "skills": ["Python", "Django", "MySQL", "Redis", "Git"],
+    "resume_text": "Daniel Fischer\nBackend Developer with 4 years experience building e-commerce backends with Django and MySQL.\nImplemented inventory caching using Redis and integrated external logistics webhooks.\nCollaborated on API contracts with frontend engineers and maintained clean git commit histories.\nFamiliar with basic Docker setups and linux server administration."
+  },
+  {
+    "candidate_id": "C016",
+    "name": "Aisha Khan",
+    "title": "Python Developer",
+    "experience_years": 3,
+    "skills": ["Python", "Flask", "PostgreSQL", "REST APIs", "Docker"],
+    "resume_text": "Aisha Khan\nPython Developer with 3 years developing REST APIs for healthcare management applications using Flask and PostgreSQL.\nCreated secure authentication middleware and automated test pipelines using Pytest.\nAssisted in migrating local server deployments to Docker containers."
+  },
+  {
+    "candidate_id": "C017",
+    "name": "Simon Ortiz",
+    "title": "Software Developer",
+    "experience_years": 4,
+    "skills": ["Python", "FastAPI", "MongoDB", "Docker", "Problem Solving"],
+    "resume_text": "Simon Ortiz\nSoftware Developer with 4 years experience creating web backend APIs using Python and FastAPI.\nHandled NoSQL database modeling with MongoDB and integrated Redis caching.\nCollaborated with frontend developers on REST API contracts and bug tracking."
+  },
+  {
+    "candidate_id": "C018",
+    "name": "Tanya Roberts",
+    "title": "Backend Engineer",
+    "experience_years": 3,
+    "skills": ["Python", "Django", "PostgreSQL", "AWS S3", "Git"],
+    "resume_text": "Tanya Roberts\nBackend Engineer with 3 years building web APIs using Python, Django, and PostgreSQL.\nImplemented document storage workflows with AWS S3 and automated database backups.\nParticipated in daily scrum meetings and delivered feature tickets on schedule."
+  },
+  {
+    "candidate_id": "C019",
+    "name": "Kevin Zhang",
+    "title": "Junior Python Developer",
+    "experience_years": 1,
+    "skills": ["Python", "Flask", "SQLite", "Git"],
+    "resume_text": "Kevin Zhang\nJunior Python Developer with 1 year experience building internal scripting tools and simple Flask prototypes.\nBasic knowledge of SQL queries on SQLite databases and Git version control.\nEager to learn backend frameworks and modern cloud tools."
+  },
+  {
+    "candidate_id": "C020",
+    "name": "Liam O'Connor",
+    "title": "Associate Software Engineer",
+    "experience_years": 1,
+    "skills": ["Python", "HTML", "CSS", "Git"],
+    "resume_text": "Liam O'Connor\nAssociate Software Engineer recent graduate with 1 year internship experience in Python.\nWrote data cleanup scripts and assisted senior engineers with bug fixes in web applications.\nPassionate about learning backend software engineering."
+  },
+  {
+    "candidate_id": "C021",
+    "name": "Sophia Martinez",
+    "title": "Junior Backend Programmer",
+    "experience_years": 2,
+    "skills": ["Python", "Django", "MySQL", "Git"],
+    "resume_text": "Sophia Martinez\nJunior Backend Programmer with 2 years experience maintaining Django legacy applications.\nWrote basic CRUD views, generated database migrations in MySQL, and resolved minor bug tickets."
+  },
+  {
+    "candidate_id": "C022",
+    "name": "Noah Patel",
+    "title": "Junior QA Automation Engineer",
+    "experience_years": 2,
+    "skills": ["Python", "Selenium", "Pytest", "Git"],
+    "resume_text": "Noah Patel\nQA Automation Engineer with 2 years experience writing end-to-end browser tests in Python with Selenium and Pytest.\nAssisted developers in diagnosing regression failures. Limited direct backend API architecture experience."
+  },
+  {
+    "candidate_id": "C023",
+    "name": "Olivia Brown",
+    "title": "Data Analyst / Junior Python",
+    "experience_years": 2,
+    "skills": ["Python", "Pandas", "SQL", "Tableau"],
+    "resume_text": "Olivia Brown\nData Analyst with 2 years experience utilizing Python Pandas and SQL for dashboard reporting and data extraction.\nNo experience in backend system design, microservices, or production API deployment."
+  },
+  {
+    "candidate_id": "C024",
+    "name": "Ethan Wright",
+    "title": "Junior Web Developer",
+    "experience_years": 1,
+    "skills": ["JavaScript", "HTML", "CSS", "Python Basics"],
+    "resume_text": "Ethan Wright\nJunior Web Developer with 1 year experience building static landing pages and small Python scripts.\nLooking to transition into professional backend development."
+  },
+  {
+    "candidate_id": "C025",
+    "name": "Chloe Adams",
+    "title": "UI/UX Product Designer",
+    "experience_years": 5,
+    "skills": ["Figma", "User Research", "Wireframing", "Design Systems"],
+    "resume_text": "Chloe Adams\nUI/UX Product Designer with 5 years creating user journeys, high-fidelity prototypes in Figma, and design systems.\nConducted user interviews and usability tests. No software programming or backend engineering experience."
+  },
+  {
+    "candidate_id": "C026",
+    "name": "Jason Taylor",
+    "title": "Digital Marketing Specialist",
+    "experience_years": 4,
+    "skills": ["SEO", "Google Ads", "Content Strategy", "Social Media"],
+    "resume_text": "Jason Taylor\nDigital Marketing Specialist with 4 years managing paid search advertising, content marketing, and Google Analytics.\nProven track record of driving website traffic. No programming experience."
+  },
+  {
+    "candidate_id": "C027",
+    "name": "Hannah Scott",
+    "title": "Technical Recruiter",
+    "experience_years": 4,
+    "skills": ["Talent Sourcing", "Interview Scheduling", "HR Coordination", "LinkedIn Recruiter"],
+    "resume_text": "Hannah Scott\nTechnical Recruiter with 4 years sourcing software engineers, conducting screening calls, and coordinating interview pipelines.\nExpertise in applicant tracking systems and recruitment metrics."
+  },
+  {
+    "candidate_id": "C028",
+    "name": "Brian Miller",
+    "title": "Customer Support Lead",
+    "experience_years": 5,
+    "skills": ["Zendesk", "Customer Service", "Technical Support", "Help Desk"],
+    "resume_text": "Brian Miller\nCustomer Support Lead with 5 years managing tier-2 technical help desk support tickets and writing knowledge base articles in Zendesk.\nNo software development or backend architecture background."
+  },
+  {
+    "candidate_id": "C029",
+    "name": "Evan Hall",
+    "title": "Junior Developer (Keyword Stuffer & Unsupported Claims Test)",
+    "experience_years": 1,
+    "skills": ["Python", "FastAPI", "PostgreSQL", "Docker", "Kubernetes", "Redis", "Distributed Systems", "System Design"],
+    "resume_text": "Evan Hall\nJunior Developer\nKey Skills: Python, FastAPI, PostgreSQL, Docker, Kubernetes, Redis, Distributed Systems, System Design, Java, SQL.\nBasic university projects in Python and Java. Looking for an entry-level junior developer role.",
+    "test_evidence": {
+      "competency": "leadership",
+      "claimed_quote": "Led a team of 10 engineers.",
+      "claimed_score": 0.85
+    }
+  },
+  {
+    "candidate_id": "C030",
+    "name": "Derek Cole",
+    "title": "Programmer (Unsupported Claims Test Case 2)",
+    "experience_years": 1,
+    "skills": ["Python", "Docker", "Kubernetes", "Redis"],
+    "resume_text": "Derek Cole\nJunior Programmer with skills in Python, Docker, Kubernetes, Redis, C++, and HTML.\nLooking for first professional role.",
+    "test_evidence": {
+      "competency": "system_design",
+      "claimed_quote": "Architected petabyte scale distributed streaming platform with 99.999% availability.",
+      "claimed_score": 0.95
+    }
+  }
+]

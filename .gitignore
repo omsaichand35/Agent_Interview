@@ -1,0 +1,67 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+
+# Python & Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+env/
+venv/
+ENV/
+
+# Output directories & generated files
+data/outputs/
+data/processed/
+data/raw/
+data/storage/
+data/outputs/identity/
+data/outputs/identity_logs/
+data/outputs/interviews/
+data/outputs/workflows/
+data/outputs/reviews/
+
+# Media & recordings
+*.mp3
+*.wav
+*.m4a
+*.webm
+*.mp4
+*.jpg
+*.jpeg
+*.png
+
+# Candidate raw photos (keep sample structures if needed, ignore live candidate photos)
+data/raw/candidates/*/photo.jpg
+data/raw/candidates/*/live_*.jpg
+
+# Logs and test artifacts
+*.log
+.pytest_cache/
+.pytest-work/
+.coverage
+htmlcov/
+backend/data/
+output/
+tmp/
+
+# IDE & OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,115 @@
+{
+  "total_traces_evaluated": 6,
+  "completeness_rate": 1.0,
+  "consistency_rate": 0.6667,
+  "auditability": {
+    "can_explain_why_question_asked": true,
+    "can_explain_why_score_assigned": true,
+    "can_explain_why_pivoted": true,
+    "can_explain_identity_review": true
+  },
+  "tamper_protection_verified": true,
+  "trace_details": [
+    {
+      "trace_id": "TRACE_001",
+      "turn": 1,
+      "is_complete": true,
+      "is_consistent": true,
+      "completeness_errors": [],
+      "consistency_errors": [],
+      "recruiter_summary": {
+        "turn": 1,
+        "candidate_signal": "FastAPI and PostgreSQL",
+        "competency": "technical_skills",
+        "decision": "Deepen",
+        "recruiter_rationale": "Candidate exhibited signals for technical_skills (FastAPI and PostgreSQL). Agent chose to deepen to verify depth and practical competency.",
+        "next_question": "How did you manage connection pooling and asynchronous request handling in FastAPI?"
+      }
+    },
+    {
+      "trace_id": "TRACE_002",
+      "turn": 2,
+      "is_complete": true,
+      "is_consistent": true,
+      "completeness_errors": [],
+      "consistency_errors": [],
+      "recruiter_summary": {
+        "turn": 2,
+        "candidate_signal": "mentored two junior developers",
+        "competency": "problem_solving",
+        "decision": "Pivot",
+        "recruiter_rationale": "Candidate exhibited signals for problem_solving (mentored two junior developers). Agent chose to pivot to verify depth and practical competency.",
+        "next_question": "You mentioned mentoring junior engineers. Can you walk me through your approach to their onboarding and code reviews?"
+      }
+    },
+    {
+      "trace_id": "TRACE_003",
+      "turn": 3,
+      "is_complete": true,
+      "is_consistent": true,
+      "completeness_errors": [],
+      "consistency_errors": [],
+      "recruiter_summary": {
+        "turn": 3,
+        "candidate_signal": "weekly 1-on-1 pairing",
+        "competency": "leadership",
+        "decision": "Next_competency",
+        "recruiter_rationale": "Candidate exhibited signals for leadership (weekly 1-on-1 pairing). Agent chose to next_competency to verify depth and practical competency.",
+        "next_question": "Thank you for that thorough explanation. Let's move on to explore your experience with system design."
+      }
+    },
+    {
+      "trace_id": "TRACE_004",
+      "turn": 4,
+      "is_complete": true,
+      "is_consistent": true,
+      "completeness_errors": [],
+      "consistency_errors": [],
+      "recruiter_summary": {
+        "turn": 4,
+        "candidate_signal": "Kafka clusters processing 15,000 events/sec",
+        "competency": "system_design",
+        "decision": "Conclude",
+        "recruiter_rationale": "Candidate exhibited signals for system_design (Kafka clusters processing 15,000 events/sec). Agent chose to conclude to verify depth and practical competency.",
+        "next_question": "Thank you for sharing your experience. That concludes our technical interview today."
+      }
+    },
+    {
+      "trace_id": "TRACE_005_INVALID_TRIGGER",
+      "turn": 2,
+      "is_complete": true,
+      "is_consistent": false,
+      "completeness_errors": [],
+      "consistency_errors": [
+        "trigger_not_in_answer: 'mentioned leadership experience' not grounded in candidate answer.",
+        "decision_reasoning_contradiction"
+      ],
+      "recruiter_summary": {
+        "turn": 2,
+        "candidate_signal": "mentioned leadership experience",
+        "competency": "databases",
+        "decision": "Pivot",
+        "recruiter_rationale": "Candidate exhibited signals for databases (mentioned leadership experience). Agent chose to pivot to verify depth and practical competency.",
+        "next_question": "Explain your SQL optimization."
+      }
+    },
+    {
+      "trace_id": "TRACE_006_INCOMPATIBLE_DECISION",
+      "turn": 3,
+      "is_complete": true,
+      "is_consistent": false,
+      "completeness_errors": [],
+      "consistency_errors": [
+        "question_incompatible_with_decision: 'What mocking fixtures did you configure in Pytest?' incompatible with 'conclude'."
+      ],
+      "recruiter_summary": {
+        "turn": 3,
+        "candidate_signal": "unit tests with Pytest",
+        "competency": "software_engineering",
+        "decision": "Conclude",
+        "recruiter_rationale": "Candidate exhibited signals for software_engineering (unit tests with Pytest). Agent chose to conclude to verify depth and practical competency.",
+        "next_question": "What mocking fixtures did you configure in Pytest?"
+      }
+    }
+  ]
+}

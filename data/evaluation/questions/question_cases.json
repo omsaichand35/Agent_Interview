@@ -1,0 +1,90 @@
+[
+  {
+    "case_id": "QCASE_001",
+    "answer": "I reduced API latency by 40% using Redis caching.",
+    "competency": "backend_development",
+    "decision": "deepen",
+    "previous_question": "What steps did you take to optimize API performance?",
+    "sample_grounded_question": "How did you determine which API operations should be cached, and how did you measure the resulting latency improvement?",
+    "sample_ungrounded_question": "How did you migrate your Kubernetes cluster from version 1.28 to 1.29?",
+    "sample_generic_question": "Tell me more about Redis.",
+    "expected_focus": ["technical reasoning", "caching strategy", "measurement"]
+  },
+  {
+    "case_id": "QCASE_002",
+    "answer": "I built a Kafka pipeline processing millions of events per hour.",
+    "competency": "system_design",
+    "decision": "deepen",
+    "previous_question": "Tell me about a high-throughput streaming architecture you designed.",
+    "sample_grounded_question": "How did you handle topic partitioning, consumer group rebalancing, and message deduplication at that scale?",
+    "sample_ungrounded_question": "What React component lifecycle hooks did you use for the frontend dashboard?",
+    "sample_generic_question": "Tell me about Kafka.",
+    "expected_focus": ["partitioning", "consumer scaling", "fault tolerance"]
+  },
+  {
+    "case_id": "QCASE_003",
+    "answer": "I optimized the API and also mentored two junior developers on our squad.",
+    "competency": "leadership",
+    "decision": "pivot",
+    "previous_question": "Tell me about a difficult technical challenge you solved.",
+    "sample_grounded_question": "You mentioned mentoring two junior developers. How did you structure their code reviews and technical growth?",
+    "sample_ungrounded_question": "How did you configure Jenkins CI/CD for Android deployments?",
+    "sample_generic_question": "Tell me about leadership.",
+    "expected_focus": ["mentorship approach", "code reviews", "team growth"]
+  },
+  {
+    "case_id": "QCASE_004",
+    "answer": "We migrated our PostgreSQL database to AWS Aurora with zero downtime using logical replication.",
+    "competency": "databases",
+    "decision": "deepen",
+    "previous_question": "How did you manage database reliability and maintenance?",
+    "sample_grounded_question": "How did you manage data consistency and cutover validation during the Aurora replication process?",
+    "sample_ungrounded_question": "What CSS grid layout did you choose for the user settings page?",
+    "sample_generic_question": "What databases do you know?",
+    "expected_focus": ["data consistency", "replication cutover", "zero downtime validation"]
+  },
+  {
+    "case_id": "QCASE_005",
+    "answer": "I deployed all backend microservices using Docker containers on Kubernetes with automated Helm charts.",
+    "competency": "cloud_devops",
+    "decision": "deepen",
+    "previous_question": "Describe your deployment and infrastructure setup.",
+    "sample_grounded_question": "How did you configure rolling updates, resource limits, and health checks across your Kubernetes pods?",
+    "sample_ungrounded_question": "How do you conduct customer usability interviews?",
+    "sample_generic_question": "Tell me about Docker.",
+    "expected_focus": ["rolling updates", "resource limits", "pod health checks"]
+  },
+  {
+    "case_id": "QCASE_006",
+    "answer": "I worked on some database queries.",
+    "competency": "databases",
+    "decision": "deepen",
+    "previous_question": "What experience do you have with databases?",
+    "sample_grounded_question": "Which database engine did you use, and could you walk me through a specific query or schema you optimized?",
+    "sample_ungrounded_question": "How did you architect a distributed consensus algorithm?",
+    "sample_generic_question": "Tell me about databases.",
+    "expected_focus": ["database engine", "specific query optimization", "schema design"]
+  },
+  {
+    "case_id": "QCASE_007",
+    "answer": "I thoroughly explained our distributed caching architecture and answered all questions with solid evidence.",
+    "competency": "system_design",
+    "decision": "next_competency",
+    "previous_question": "How did your cache invalidation strategy handle split-brain partitions?",
+    "sample_grounded_question": "Thank you for that thorough explanation. Let's move on to discuss how you approach software quality and automated testing.",
+    "sample_ungrounded_question": "What color theme did you select for the IDE?",
+    "sample_generic_question": "Next question.",
+    "expected_focus": ["smooth transition", "next competency target"]
+  },
+  {
+    "case_id": "QCASE_008",
+    "answer": "I wrote Pytest integration tests and maintained 85% test coverage in CI/CD pipelines.",
+    "competency": "software_engineering",
+    "decision": "deepen",
+    "previous_question": "How do you ensure test coverage across backend services?",
+    "sample_grounded_question": "How did you handle mock fixtures for external third-party APIs and prevent flaky tests in your CI/CD pipeline?",
+    "sample_ungrounded_question": "What is your favorite brand of server rack hardware?",
+    "sample_generic_question": "Do you write tests?",
+    "expected_focus": ["mock fixtures", "flaky test prevention", "CI integration"]
+  }
+]

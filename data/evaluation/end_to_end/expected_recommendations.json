@@ -1,0 +1,28 @@
+[
+  {
+    "case_id": "HCASE_001",
+    "recommendations": {
+      "CAND_TOP_01": {
+        "final_decision": "HIRE",
+        "human_review_required": false,
+        "identity_gate": "PASSED"
+      },
+      "CAND_MID_02": {
+        "final_decision": "CONSIDER",
+        "human_review_required": true,
+        "identity_gate": "PASSED"
+      },
+      "CAND_FAIL_IDENT_03": {
+        "final_decision": "HUMAN_REVIEW",
+        "human_review_required": true,
+        "identity_gate": "FAILED",
+        "automatic_recommendation_forbidden": true
+      },
+      "CAND_UNQUAL_04": {
+        "final_decision": "REJECT",
+        "human_review_required": false,
+        "identity_gate": "PASSED"
+      }
+    }
+  }
+]

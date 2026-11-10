@@ -1,0 +1,38 @@
+[
+  {
+    "trace_id": "TRACE_001",
+    "is_complete": true,
+    "is_consistent": true,
+    "expected_errors": []
+  },
+  {
+    "trace_id": "TRACE_002",
+    "is_complete": true,
+    "is_consistent": true,
+    "expected_errors": []
+  },
+  {
+    "trace_id": "TRACE_003",
+    "is_complete": true,
+    "is_consistent": true,
+    "expected_errors": []
+  },
+  {
+    "trace_id": "TRACE_004",
+    "is_complete": true,
+    "is_consistent": true,
+    "expected_errors": []
+  },
+  {
+    "trace_id": "TRACE_005_INVALID_TRIGGER",
+    "is_complete": true,
+    "is_consistent": false,
+    "expected_errors": ["trigger_not_in_answer"]
+  },
+  {
+    "trace_id": "TRACE_006_INCOMPATIBLE_DECISION",
+    "is_complete": true,
+    "is_consistent": false,
+    "expected_errors": ["question_incompatible_with_decision"]
+  }
+]

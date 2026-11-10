@@ -1,0 +1,46 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Python & Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+env/
+venv/
+
+# Output directories & generated files
+data/outputs/
+data/processed/
+data/raw/
+data/storage/
+data/outputs/identity/
+data/outputs/identity_logs/
+data/outputs/interviews/
+data/outputs/workflows/
+data/outputs/reviews/
+
+# Media & recordings
+*.mp3
+*.wav
+*.m4a
+*.webm
+*.mp4
+
+# Logs and test artifacts
+*.log
+.pytest_cache/
+.pytest-tmp/
+.pytest-work/
+.test-runtime/
+.coverage
+htmlcov/
+*.db
+*.db-*
+*.sqlite
+*.sqlite3

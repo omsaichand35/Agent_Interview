@@ -1,0 +1,94 @@
+[
+  {
+    "case_id": "PAIR_001",
+    "case_type": "equivalent_pair",
+    "competency": "problem_solving",
+    "answer_a": "I reduced API latency by 40% using Redis caching. I measured latency before and after the change.",
+    "answer_b": "We used Redis to cache frequently accessed API data. After implementing it, I compared the response times and saw roughly a 40% reduction.",
+    "notes": "Semantically equivalent answers describing Redis caching and before/after latency measurement."
+  },
+  {
+    "case_id": "PAIR_002",
+    "case_type": "equivalent_pair",
+    "competency": "system_design",
+    "answer_a": "I designed a Kafka streaming pipeline processing 15,000 events/sec with 12 partitions and consumer groups to prevent lag.",
+    "answer_b": "Our event stream processed around 15k events per second; I architected it in Kafka using consumer groups across 12 partitions to eliminate consumer lag.",
+    "notes": "Equivalent architectural explanations of Kafka stream scaling and partitioning."
+  },
+  {
+    "case_id": "PAIR_003",
+    "case_type": "equivalent_pair",
+    "competency": "databases",
+    "answer_a": "I diagnosed connection pool starvation in PostgreSQL by checking pg_stat_activity, and tuned max_connections and PgBouncer pool sizes.",
+    "answer_b": "When PostgreSQL suffered connection exhaustion, I analyzed pg_stat_activity to find bottlenecks and resolved it by reconfiguring PgBouncer pooling parameters.",
+    "notes": "Equivalent PostgreSQL pool exhaustion diagnosis and resolution."
+  },
+  {
+    "case_id": "PAIR_004",
+    "case_type": "equivalent_pair",
+    "competency": "leadership",
+    "answer_a": "I mentored two junior developers through weekly pair programming sessions and structured code reviews, helping them ship their first production feature.",
+    "answer_b": "I paired weekly with two junior engineers on our team and guided them in PR reviews until they successfully deployed their first feature to production.",
+    "notes": "Equivalent junior mentoring and engineering leadership."
+  },
+  {
+    "case_id": "SENS_001",
+    "case_type": "evidence_sensitivity",
+    "competency": "backend_development",
+    "weak_answer": "I worked on APIs.",
+    "strong_answer": "I designed the REST API, introduced Redis caching, and reduced p95 latency from 420 ms to 180 ms.",
+    "notes": "Passive vague API mention vs concrete REST design, Redis caching, and measured p95 latency reduction."
+  },
+  {
+    "case_id": "SENS_002",
+    "case_type": "evidence_sensitivity",
+    "competency": "cloud_devops",
+    "weak_answer": "I know Kubernetes and cloud systems.",
+    "strong_answer": "I configured zero-downtime rolling deployments on AWS EKS with horizontal pod autoscaling and readiness probes.",
+    "notes": "Passive keyword assertion vs specific deployment orchestration and autoscaling."
+  },
+  {
+    "case_id": "SENS_003",
+    "case_type": "evidence_sensitivity",
+    "competency": "software_engineering",
+    "weak_answer": "I write tests for my code sometimes.",
+    "strong_answer": "I implemented integration tests in Pytest with isolated database fixtures, raising CI test coverage from 45% to 88%.",
+    "notes": "Generic claim vs concrete tooling, fixtures, and verified coverage delta."
+  },
+  {
+    "case_id": "UNSUPP_001",
+    "case_type": "unsupported_claim",
+    "competency": "system_design",
+    "answer": "I designed a distributed system handling 10 million requests per second.",
+    "notes": "Extreme scale claim without architectural topology, consensus, storage, or verification."
+  },
+  {
+    "case_id": "UNSUPP_002",
+    "case_type": "unsupported_claim",
+    "competency": "problem_solving",
+    "answer": "I single-handedly replaced our company's entire legacy monolith in one weekend without any bugs.",
+    "notes": "Unsubstantiated hyperbole lacking technical depth or rollback strategy."
+  },
+  {
+    "case_id": "AGG_001",
+    "case_type": "multi_turn_aggregation",
+    "competency": "backend_development",
+    "turns": [
+      {"turn": 1, "answer": "I build web endpoints.", "evidence_quality": 0.32, "score": 0.35},
+      {"turn": 2, "answer": "I built REST services in FastAPI with asynchronous database queries.", "evidence_quality": 0.82, "score": 0.85},
+      {"turn": 3, "answer": "I optimized our serializer and reduced payload sizes by 60%, improving throughput.", "evidence_quality": 0.86, "score": 0.88}
+    ],
+    "notes": "Initial weak answer followed by two strong answers; weak answer must not penalize accumulated mastery."
+  },
+  {
+    "case_id": "AGG_002",
+    "case_type": "multi_turn_aggregation",
+    "competency": "databases",
+    "turns": [
+      {"turn": 1, "answer": "I partitioned our 2TB PostgreSQL table on created_at and added composite B-tree indexes.", "evidence_quality": 0.90, "score": 0.90},
+      {"turn": 2, "answer": "I tuned autovacuum cost limits and prevented table bloat across high-write partitions.", "evidence_quality": 0.88, "score": 0.92},
+      {"turn": 3, "answer": "I can query any database instantly.", "evidence_quality": 0.25, "score": 0.30}
+    ],
+    "notes": "Two stellar answers followed by an unsubstantiated boast; boast must not wipe out demonstrated expertise."
+  }
+]

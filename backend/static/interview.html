@@ -1,0 +1,1384 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Interview - Identity Verification</title>
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --card-border: #334155;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+      --success: #10b981;
+      --danger: #ef4444;
+      --warning: #f59e0b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 820px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      letter-spacing: 0.05em;
+      color: #fff;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      background-color: #334155;
+      color: #cbd5e1;
+      text-transform: uppercase;
+    }
+
+    .badge.checking {
+      background-color: rgba(59, 130, 246, 0.2);
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+
+    .badge.verified {
+      background-color: rgba(16, 185, 129, 0.2);
+      color: var(--success);
+      border: 1px solid var(--success);
+    }
+
+    .badge.failed {
+      background-color: rgba(239, 68, 68, 0.2);
+      color: var(--danger);
+      border: 1px solid var(--danger);
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    }
+
+    .camera-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .video-frame {
+      position: relative;
+      width: 480px;
+      height: 360px;
+      max-width: 100%;
+      background-color: #000;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 2px solid #475569;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .overlay-msg {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    .btn {
+      padding: 10px 24px;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #fff;
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      background-color: var(--primary-hover);
+    }
+
+    .btn-success {
+      background-color: var(--success);
+      color: #fff;
+    }
+
+    .btn-success:hover:not(:disabled) {
+      background-color: #059669;
+    }
+
+    .alert {
+      padding: 16px 20px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .alert-danger {
+      background-color: rgba(239, 68, 68, 0.15);
+      border: 1px solid var(--danger);
+      color: #fca5a5;
+    }
+
+    .alert-danger h3 {
+      color: #f87171;
+      margin-bottom: 6px;
+    }
+
+    .alert-success {
+      background-color: rgba(16, 185, 129, 0.15);
+      border: 1px solid var(--success);
+      color: #a7f3d0;
+      text-align: center;
+    }
+
+    .question-box h2 {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+
+    .question-text {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 120px;
+      padding: 14px;
+      font-size: 1rem;
+      font-family: inherit;
+      background-color: #0f172a;
+      border: 1px solid #475569;
+      border-radius: 8px;
+      color: #fff;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    .recording-section {
+      background: #111827;
+      border: 1px solid #374151;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .record-controls {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-record {
+      background-color: #ef4444;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-record:hover:not(:disabled) {
+      background-color: #dc2626;
+    }
+
+    .btn-stop {
+      background-color: #475569;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-stop:hover:not(:disabled) {
+      background-color: #334155;
+    }
+
+    .recording-pulse {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #ef4444;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .pulse-dot {
+      width: 12px;
+      height: 12px;
+      background-color: #ef4444;
+      border-radius: 50%;
+      animation: pulse 1s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { opacity: 0.3; transform: scale(0.85); }
+      to { opacity: 1; transform: scale(1.15); }
+    }
+
+    .audio-preview-box {
+      background-color: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .audio-preview-box audio {
+      width: 100%;
+      height: 40px;
+    }
+
+    .progress-section {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+    }
+
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .competency-item {
+      margin-bottom: 12px;
+    }
+
+    .competency-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.875rem;
+      margin-bottom: 5px;
+      color: #cbd5e1;
+    }
+
+    .progress-bar-bg {
+      width: 100%;
+      height: 8px;
+      background-color: #334155;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #3b82f6, #10b981);
+      width: 0%;
+      transition: width 0.4s ease;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .hidden {
+      display: none !important;
+    }
+  </style>
+  <style>
+    :root{--bg-color:#f3efe5;--card-bg:#fffdf8;--card-border:#d9d1c4;--text-main:#20333a;--text-muted:#5d6c6e;--primary:#a64d35;--primary-hover:#853d2d;--success:#176b57;--danger:#9d4339;--warning:#9a591d}
+    body{font-family:Arial,Helvetica,sans-serif;background-color:var(--bg-color);background-image:linear-gradient(90deg,transparent 0 7.5%,#e6dfd2 7.55%,transparent 7.65%);color:var(--text-main);padding:26px 20px 60px}
+    .container{max-width:860px;gap:20px}header{border-color:#c9c0b2}h1{font:normal 1.8rem Georgia,'Times New Roman',serif;letter-spacing:-.02em;color:#193d4c}.card{background:#fffdf8;border:1px solid #ddd5c8;border-radius:5px;box-shadow:0 8px 26px #283a3210}.badge{border-radius:3px;background:#e8e4d9;color:#314d56}.badge.checking{background:#e7edf0;color:#315d73}.badge.verified{background:#e1eee6;color:#17624f;border-color:#70a88f}.badge.failed{background:#f4e6df;color:#773b2e;border-color:#c88a78}.video-frame{border-radius:3px;border-color:#62736e}.question-box h2{font:normal 1.3rem Georgia,serif;text-transform:none;letter-spacing:0;color:#53676c}.question-text{font:normal clamp(1.35rem,3vw,1.8rem)/1.45 Georgia,'Times New Roman',serif;color:#193d4c}.progress-section,.recording-section,.audio-preview-box{background:#f4f1e8;border-color:#d8d1c5;border-radius:3px}.competency-label{color:#344f57}.progress-bar-bg{background:#dcd9cf;border-radius:1px}.progress-bar-fill{background:#557f70;border-radius:1px}.btn{border-radius:3px;transition:transform .18s cubic-bezier(.2,.8,.2,1),background .18s,box-shadow .18s}.btn:active{transform:translateY(1px)}.btn-primary{background:#a44e36}.btn-primary:hover:not(:disabled){background:#853d2d}.btn-success{background:#176b57}.btn-success:hover:not(:disabled){background:#105641}.btn-record{background:#a64d35}.btn-record:hover:not(:disabled){background:#853d2d}.btn-stop{background:#526b70}.alert-success{background:#e5eee7;border-color:#a9c3b0;color:#26483f}.alert-danger{background:#f4e6df;border-color:#d6a798;color:#773b2e}.question-box details{color:#5d6c6e!important}textarea{background:#fffefa!important;color:#20333a!important;border:1px solid #c9c1b4!important;border-radius:3px!important}textarea:focus{outline:3px solid #bd795e55!important;border-color:#9e4c35!important}#transcript-section,#audio-preview-container{background:#f0eee5!important;border-color:#d6cfc1!important;border-radius:3px!important}#transcript-display{color:#20333a!important}#upload-status{color:#26483f!important;background:#e5eee7!important}
+    #login-overlay{background:rgba(243,239,229,.97)!important;backdrop-filter:blur(4px)}#login-overlay>div{background:#fffdf8!important;border:1px solid #d9d1c4!important;border-radius:5px!important;padding:36px!important;box-shadow:0 18px 45px #283a3220!important}#login-overlay h2{font:normal 1.6rem Georgia,'Times New Roman',serif!important;color:#193d4c!important}#login-overlay p{color:#5d6c6e!important}#login-overlay label{color:#4b6267!important}#login-overlay input{background:#fffefa!important;border:1px solid #c9c1b4!important;border-radius:3px!important;color:#20333a!important}#login-btn{background:#a44e36!important;border-radius:3px!important;box-shadow:0 2px 0 #713a2a;transition:transform .18s,background .18s!important}#login-btn:hover{background:#853d2d!important;transform:translateY(-1px)}
+    :focus-visible{outline:3px solid #bd795e!important;outline-offset:3px}@media(max-width:600px){body{padding:18px 14px 40px}.card{padding:19px}header{align-items:flex-start;gap:12px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+  </style>
+</head>
+<body>
+  <div id="login-overlay" style="position:fixed;inset:0;background:rgba(15,23,42,0.97);display:flex;align-items:center;justify-content:center;z-index:9999;">
+    <div style="background:#1e293b;border:1px solid #334155;border-radius:16px;padding:40px;width:min(400px,90vw);">
+      <div style="text-align:center;margin-bottom:24px"><h2 style="color:#f8fafc;font-size:1.4rem;font-weight:700;margin:0">Candidate Interview Portal</h2><p style="color:#94a3b8;font-size:.875rem;margin-top:6px">Sign in to begin your interview session</p></div>
+      <div id="login-error" style="display:none;background:rgba(239,68,68,.15);border:1px solid #ef4444;color:#fca5a5;padding:10px 14px;border-radius:8px;font-size:.85rem;margin-bottom:16px"></div>
+      <div style="margin-bottom:16px"><label>Email</label><input id="login-email" type="email" placeholder="your@email.com" style="width:100%;padding:10px 14px;box-sizing:border-box" onkeydown="if(event.key==='Enter')doLogin()"></div>
+      <div style="margin-bottom:24px"><label>Password</label><input id="login-password" type="password" placeholder="Enter password" style="width:100%;padding:10px 14px;box-sizing:border-box" onkeydown="if(event.key==='Enter')doLogin()"></div>
+      <button onclick="doLogin()" id="login-btn" style="width:100%;padding:12px;color:#fff;border:none;font-size:1rem;font-weight:600;cursor:pointer">Sign In</button>
+      <p style="color:#475569;font-size:.78rem;text-align:center;margin-top:16px">Sign in with your student account to continue.</p>
+    </div>
+  </div>
+  <div class="container">
+    <header>
+      <h1>AI INTERVIEW</h1>
+      <div>
+        Identity: <span id="identity-badge" class="badge">Pending</span>
+      </div>
+    </header>
+
+    <div id="interview-timer" class="card" role="timer" aria-live="polite" style="display:none;text-align:center;padding:12px 18px;font-weight:700;font-size:1.15rem;color:#193d4c">Time remaining <span id="interview-time-left" style="font-variant-numeric:tabular-nums">--:--</span></div>
+
+    <!-- Camera Section -->
+    <div class="card camera-wrapper">
+      <div class="video-frame">
+        <video id="webcam" autoplay muted playsinline></video>
+      </div>
+      <!-- Live lighting quality pill -->
+      <div id="lighting-indicator" style="display:flex;align-items:center;gap:8px;margin:6px 0 2px;font-size:0.82rem;color:#94a3b8;">
+        <span id="lighting-dot" style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#475569;"></span>
+        <span id="lighting-label">Checking lighting…</span>
+      </div>
+      <p id="camera-prompt" class="overlay-msg">Please look at the camera.</p>
+      <p style="margin:6px 0;color:#5d6c6e;font-size:.82rem">During recorded answers, head and eye direction are estimated in your browser; gaze frames are not uploaded for this check. MediaPipe may send product usage/performance metrics to Google. A separate camera frame is still used by this app for identity verification. Three sustained off-screen warnings create a recruiter review flag; they do not automatically stop or score the interview.</p>
+      <button id="verify-btn" class="btn btn-primary" onclick="runIdentityCheck()">Verify Identity</button>
+    </div>
+
+    <!-- Identity Failure Notice -->
+    <div id="failure-alert" class="card hidden" style="border: 2px solid #ef4444; background: rgba(239, 68, 68, 0.1); text-align: center; padding: 32px 24px;">
+      <h2 style="font-size: 1.1rem; color: #94a3b8; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px;">Identity Verification</h2>
+      <div style="font-size: 1.6rem; color: #ef4444; font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+        <span>✕</span> <span>Verification failed</span>
+      </div>
+      <p style="font-size: 1.1rem; color: #f8fafc; margin-bottom: 8px; font-weight: 600;">The interview cannot continue.</p>
+      <p style="font-size: 0.95rem; color: #cbd5e1; margin-bottom: 16px;">Your session has been sent for human review.</p>
+      <div id="failure-reason-box" style="display: inline-block; background-color: rgba(15, 23, 42, 0.6); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 6px; padding: 6px 14px; font-size: 0.85rem; color: #fca5a5;">
+        <span id="failure-reason">Reason: Face mismatch</span>
+      </div>
+    </div>
+
+    <!-- Live Interview Section (Visible only when VERIFIED) -->
+    <div id="question-card" class="card question-box hidden">
+      <!-- Progress & Competencies (B7) -->
+      <div class="progress-section">
+        <div class="progress-header">
+          <h3 style="font-size: 1.05rem; color: #fff;">Interview Progress</h3>
+          <span id="turn-badge" class="badge" style="background-color: #3b82f6; color: #fff;">Question 1</span>
+        </div>
+
+        <div class="competency-item">
+          <div class="competency-label">
+            <span>Technical Skills</span>
+            <span id="score-technical">--</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div id="bar-technical" class="progress-bar-fill" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <div class="competency-item">
+          <div class="competency-label">
+            <span>Problem Solving</span>
+            <span id="score-problem">--</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div id="bar-problem" class="progress-bar-fill" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <div class="competency-item">
+          <div class="competency-label">
+            <span>Leadership</span>
+            <span id="score-leadership">--</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div id="bar-leadership" class="progress-bar-fill" style="width: 0%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Current Question -->
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <h2>Current Question</h2>
+        <button id="read-question-btn" type="button" class="btn btn-primary" onclick="readQuestionAloud(true)" aria-label="Read the current question again">🔊 Read question again</button>
+      </div>
+      <p id="question-speech-status" role="status" aria-live="polite" style="margin:8px 0;color:#5d6c6e;font-size:.85rem"></p>
+      <div id="question-text" class="question-text">Waiting for interview question...</div>
+
+      <!-- Candidate's Latest Answer / Transcript -->
+      <div id="transcript-section" class="hidden" style="margin-bottom: 20px; background-color: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 14px;">
+        <h3 style="font-size: 0.85rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 6px;">Your Answer</h3>
+        <p id="transcript-display" style="color: #f8fafc; font-size: 1rem; font-style: italic; line-height: 1.5;"></p>
+      </div>
+
+      <!-- Processing State Indicator -->
+      <div id="processing-indicator" class="alert alert-warning hidden" style="margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+        <div class="pulse-dot"></div>
+        <span>Processing your answer... Whisper transcribing and agent reasoning.</span>
+      </div>
+
+      <!-- Voice Controls -->
+      <div id="voice-controls-section" class="recording-section">
+        <div class="record-controls">
+          <button id="record-toggle-btn" class="btn btn-record" onclick="toggleRecording()">
+            🎙 Start Answer
+          </button>
+          <div id="recording-indicator" class="recording-pulse hidden">
+            <span class="pulse-dot"></span>
+            <span>Recording... Speak your answer clearly</span>
+          </div>
+          <div id="gaze-monitor-status" role="status" aria-live="polite" style="margin-top:10px;color:#5d6c6e;font-size:.84rem">Gaze monitoring is local and only active while recording an answer.</div>
+          <div id="gaze-warning" class="alert alert-warning hidden" role="alert" aria-live="assertive" style="margin-top:8px"></div>
+        </div>
+
+        <div id="audio-preview-container" class="audio-preview-box hidden">
+          <p style="font-size: 0.85rem; color: #cbd5e1; font-weight: 500;">Recorded answer preview:</p>
+          <audio id="audio-player" controls></audio>
+          <button id="retry-audio-btn" type="button" class="btn btn-primary hidden" onclick="retryAudioUpload()">Retry transcription</button>
+          <div id="upload-status" class="alert alert-success" style="font-size: 0.85rem; padding: 8px 12px; margin-top: 4px;"></div>
+        </div>
+      </div>
+
+      <!-- Text Answer (Alternative / Fallback) -->
+      <details id="text-answer-details" style="margin-bottom: 16px; color: #94a3b8; font-size: 0.9rem;">
+        <summary style="cursor: pointer; margin-bottom: 10px;">Or type your answer directly</summary>
+        <textarea id="answer-input" placeholder="Type your answer here if microphone is unavailable..."></textarea>
+        <button id="submit-answer-btn" class="btn btn-success" onclick="submitAnswer()">Submit Text Answer</button>
+      </details>
+    </div>
+
+    <!-- Completion Card -->
+    <div id="complete-card" class="alert alert-success hidden">
+      <h2>Interview Complete</h2>
+      <p style="margin-top: 8px;">Thank you for completing your interview. Your evaluation has been saved.</p>
+      <p><a id="completed-application-link" href="/student" style="color:inherit;font-weight:700">Return to my application</a></p>
+    </div>
+
+    <!-- General Error Box -->
+    <div id="general-error" class="alert alert-danger hidden"></div>
+  </div>
+
+  <script>
+    const API_URL = window.location.origin;
+
+    // ---- Auth helpers ----
+    function getToken() {
+      return localStorage.getItem('student_access_token') || sessionStorage.getItem('student_access_token') || localStorage.getItem('admissions_token') || sessionStorage.getItem('interview_token') || localStorage.getItem('interview_token');
+    }
+    function setToken(tok) {
+      sessionStorage.setItem('interview_token', tok);
+      localStorage.setItem('interview_token', tok);
+      localStorage.setItem('student_access_token', tok);
+    }
+    function clearToken() {
+      sessionStorage.removeItem('interview_token');
+      localStorage.removeItem('interview_token');
+      sessionStorage.removeItem('student_access_token');
+      localStorage.removeItem('student_access_token');
+      localStorage.removeItem('admissions_token');
+    }
+    async function authFetch(url, opts) {
+      opts = opts || {};
+      var headers = {};
+      var existing = opts.headers || {};
+      for (var k in existing) { headers[k] = existing[k]; }
+      var tok = getToken();
+      if (tok) headers['Authorization'] = 'Bearer ' + tok;
+      var res = await fetch(url, Object.assign({}, opts, { headers: headers }));
+      if (res.status === 401) { clearToken(); showLoginOverlay(); }
+      return res;
+    }
+    function showLoginOverlay() { document.getElementById('login-overlay').style.display = 'flex'; }
+    function hideLoginOverlay() { document.getElementById('login-overlay').style.display = 'none'; }
+    async function doLogin() {
+      var em=document.getElementById('login-email').value.trim(),pw=document.getElementById('login-password').value;
+      var errEl=document.getElementById('login-error'),btn=document.getElementById('login-btn');errEl.style.display='none';btn.textContent='Signing in...';btn.disabled=true;
+      try {
+        var res=await fetch(API_URL+'/auth/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:em,password:pw})});
+        var data=await res.json().catch(()=>({}));if(!res.ok)throw new Error(data.detail||'Login failed.');
+        if(data.role!=='candidate')throw new Error('This interview link is for a student account.');setToken(data.access_token);
+        if(data.candidate_id){window._authCandidateId=data.candidate_id;candidateId=data.candidate_id}
+        hideLoginOverlay();startCamera();
+      } catch(e){errEl.textContent=e.message;errEl.style.display='block'} finally{btn.textContent='Sign In';btn.disabled=false}
+    }
+    const urlParams = new URLSearchParams(window.location.search);
+    const applicationId = urlParams.get("application_id");
+    const sessionId = urlParams.get("session_id") || ("INT_" + (window.crypto?.randomUUID?.() || Date.now().toString(36)));
+    let candidateId = urlParams.get("candidate_id") || "";
+
+    const videoElement = document.getElementById("webcam");
+    let interviewDeadline = null, interviewTimerInterval = null;
+    function updateInterviewTimer(){
+      if(!interviewDeadline)return;
+      const remaining=Math.max(0,Math.ceil((interviewDeadline-Date.now())/1000));
+      const mm=String(Math.floor(remaining/60)).padStart(2,'0'),ss=String(remaining%60).padStart(2,'0');
+      document.getElementById('interview-time-left').textContent=`${mm}:${ss}`;
+      if(remaining===0){clearInterval(interviewTimerInterval);document.getElementById('interview-time-left').textContent='00:00';document.getElementById('interview-timer').style.color='#9d4339';answerInput.disabled=true;submitBtn.disabled=true;document.getElementById('record-toggle-btn').disabled=true;showError('Your scheduled interview time has ended. Your answers can no longer be submitted.');}
+    }
+    async function loadInterviewDeadline(){
+      if(!applicationId)return;
+      try{const response=await authFetch(`${API_URL}/applications/mine`);if(!response.ok)return;const apps=await response.json();const app=apps.find(item=>item.application_id===applicationId),end=app?.schedule?.scheduled_end;if(end){interviewDeadline=Date.parse(end);if(Number.isFinite(interviewDeadline)){document.getElementById('interview-timer').style.display='block';updateInterviewTimer();interviewTimerInterval=setInterval(updateInterviewTimer,1000)}}}catch(error){console.warn('Could not load interview deadline',error)}
+    }
+    const badge = document.getElementById("identity-badge");
+    const verifyBtn = document.getElementById("verify-btn");
+    const cameraPrompt = document.getElementById("camera-prompt");
+    const failureAlert = document.getElementById("failure-alert");
+    const failureReason = document.getElementById("failure-reason");
+    const questionCard = document.getElementById("question-card");
+    const questionText = document.getElementById("question-text");
+    let lastSpokenQuestion = "";
+    let questionSpeechRequestId = 0;
+
+    function questionSpeechLanguage(text) {
+      if (/[\u0C00-\u0C7F]/u.test(text)) return "te-IN";
+      if (/[\u0900-\u097F]/u.test(text)) return "hi-IN";
+      if (/[\u0B80-\u0BFF]/u.test(text)) return "ta-IN";
+      if (/[\u0C80-\u0CFF]/u.test(text)) return "kn-IN";
+      if (/[\u0D00-\u0D7F]/u.test(text)) return "ml-IN";
+      if (/[\u0980-\u09FF]/u.test(text)) return "bn-IN";
+      if (/[\u0A00-\u0A7F]/u.test(text)) return "pa-IN";
+      if (/[\u0600-\u06FF]/u.test(text)) return "ur-PK";
+      return document.documentElement.lang || navigator.language || "en-US";
+    }
+
+    function readQuestionAloud(force = false) {
+      const text = (questionText.textContent || "").trim();
+      const status = document.getElementById("question-speech-status");
+      if (!text || text === "Waiting for interview question..." || text === "Question complete.") return;
+      if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
+        status.textContent = "Read-aloud is not available in this browser. You can read the question below.";
+        return;
+      }
+      if (!force && text === lastSpokenQuestion) return;
+
+      const requestId = ++questionSpeechRequestId;
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      const language = questionSpeechLanguage(text);
+      const voices = window.speechSynthesis.getVoices();
+      utterance.lang = language;
+      utterance.voice = voices.find((voice) => voice.lang.toLowerCase() === language.toLowerCase())
+        || voices.find((voice) => voice.lang.toLowerCase().startsWith(language.split("-")[0].toLowerCase()))
+        || null;
+      utterance.rate = 0.92;
+      utterance.onstart = () => { if (requestId === questionSpeechRequestId) status.textContent = "Reading the question aloud…"; };
+      utterance.onend = () => { if (requestId === questionSpeechRequestId) status.textContent = "Question read aloud. Use “Read question again” to hear it once more."; };
+      utterance.onerror = () => { if (requestId === questionSpeechRequestId) status.textContent = "Could not play speech. You can read the question below."; };
+      lastSpokenQuestion = text;
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function primeQuestionSpeech() {
+      if ("speechSynthesis" in window) {
+        try { window.speechSynthesis.resume(); } catch (_) {}
+      }
+    }
+
+    function setCurrentQuestion(text, speak = true) {
+      questionText.textContent = text || "Question complete.";
+      if (speak) readQuestionAloud(true);
+    }
+
+    const answerInput = document.getElementById("answer-input");
+    const submitBtn = document.getElementById("submit-answer-btn");
+    const completeCard = document.getElementById("complete-card");
+    function showInterviewComplete() {
+      if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+      questionCard.classList.add("hidden");
+      completeCard.classList.remove("hidden");
+      const applicationLink = document.getElementById("completed-application-link");
+      if (applicationLink && applicationId) applicationLink.href = `/student?application=${encodeURIComponent(applicationId)}`;
+      window.setTimeout(() => window.location.replace(applicationId ? `/student?application=${encodeURIComponent(applicationId)}` : "/student"), 5000);
+    }
+    const generalError = document.getElementById("general-error");
+
+    let stream = null;
+
+    // Lighting monitor state
+    let _lightingMonitor = null;
+    let gazeLandmarker = null;
+    let gazeInitPromise = null;
+    let gazeSamplingTimer = null;
+    let gazeBaseline = null;
+    let gazeAwaySince = null;
+    let gazeNoFaceSince = null;
+    let gazeLastWarningAt = 0;
+    let gazeWarningCount = 0;
+    let gazeReviewFlagged = false;
+    let gazeMonitorUnavailable = false;
+    let gazeEventPending = false;
+    let gazeFrameCanvas = null;
+    const GAZE_WARNING_SUSTAIN_MS = 3000;
+    const GAZE_WARNING_COOLDOWN_MS = 8000;
+    const GAZE_DIRECTIONS = ["eyeLookDownLeft", "eyeLookDownRight", "eyeLookInLeft", "eyeLookInRight", "eyeLookOutLeft", "eyeLookOutRight", "eyeLookUpLeft", "eyeLookUpRight"];
+
+    async function startCamera() {
+      try {
+        stream = await navigator.mediaDevices.getUserMedia({
+          video: { width: { ideal: 640 }, height: { ideal: 480 }, facingMode: "user" },
+          audio: false,
+        });
+        videoElement.srcObject = stream;
+        videoElement.onloadedmetadata = () => {
+          videoElement.play().catch(() => {});
+          // Start lighting quality monitor once camera is live
+          startLightingMonitor();
+          initializeGazeLandmarker().catch((err) => {
+            console.warn("Local gaze monitor could not initialize", err);
+            gazeMonitorUnavailable = true;
+            document.getElementById("gaze-monitor-status").textContent = "Local gaze monitoring is unavailable on this browser; your interview can continue, but gaze warnings will not be generated.";
+          });
+        };
+      } catch (err) {
+        showError("Camera access required: " + err.message);
+      }
+    }
+
+    async function initializeGazeLandmarker() {
+      if (gazeLandmarker) return gazeLandmarker;
+      if (!gazeInitPromise) {
+        gazeInitPromise = (async () => {
+          const { FaceLandmarker, FilesetResolver } = await import("https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@1.1.1/vision_bundle.mjs");
+          const vision = await FilesetResolver.forVisionTasks("https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@1.1.1/wasm");
+          const options = {
+            baseOptions: { modelAssetPath: "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task" },
+            runningMode: "VIDEO",
+            numFaces: 1,
+            minFaceDetectionConfidence: 0.6,
+            minFacePresenceConfidence: 0.6,
+            minTrackingConfidence: 0.6,
+            outputFaceBlendshapes: true,
+            outputFacialTransformationMatrixes: true,
+          };
+          gazeLandmarker = await FaceLandmarker.createFromOptions(vision, options);
+          gazeMonitorUnavailable = false;
+          document.getElementById("gaze-monitor-status").textContent = "Local head and eye monitor ready. It checks gaze only while you record an answer.";
+          return gazeLandmarker;
+        })().catch((error) => {
+          gazeInitPromise = null;
+          throw error;
+        });
+      }
+      return gazeInitPromise;
+    }
+
+    function sampleLocalGaze() {
+      if (!gazeLandmarker || !videoElement.videoWidth || videoElement.readyState < 2) return null;
+      if (!gazeFrameCanvas) gazeFrameCanvas = document.createElement("canvas");
+      gazeFrameCanvas.width = 320;
+      gazeFrameCanvas.height = 240;
+      const ctx = gazeFrameCanvas.getContext("2d", { willReadFrequently: false });
+      ctx.drawImage(videoElement, 0, 0, gazeFrameCanvas.width, gazeFrameCanvas.height);
+      const result = gazeLandmarker.detectForVideo(gazeFrameCanvas, performance.now());
+      const landmarks = result.faceLandmarks?.[0];
+      if (!landmarks || landmarks.length < 478) return { visible: false };
+
+      const leftEye = landmarks[33], rightEye = landmarks[263], nose = landmarks[1];
+      const mouthTop = landmarks[13], mouthBottom = landmarks[14];
+      if (![leftEye, rightEye, nose, mouthTop, mouthBottom].every((point) => point && Number.isFinite(point.x) && Number.isFinite(point.y))) return { visible: false };
+      const eyeMidX = (leftEye.x + rightEye.x) / 2;
+      const eyeMidY = (leftEye.y + rightEye.y) / 2;
+      const eyeWidth = Math.max(Math.abs(rightEye.x - leftEye.x), 0.001);
+      const mouthMidY = (mouthTop.y + mouthBottom.y) / 2;
+      const headYaw = (nose.x - eyeMidX) / eyeWidth;
+      const headPitch = (nose.y - eyeMidY) / Math.max(Math.abs(mouthMidY - eyeMidY), 0.001);
+      const categories = result.faceBlendshapes?.[0]?.categories || [];
+      const eyes = Object.fromEntries(GAZE_DIRECTIONS.map((name) => [name, Number(categories.find((category) => category.categoryName === name)?.score || 0)]));
+      return { visible: true, headYaw, headPitch, eyes };
+    }
+
+    async function calibrateGazeBaseline() {
+      try {
+        await initializeGazeLandmarker();
+        const sample = sampleLocalGaze();
+        if (sample?.visible) gazeBaseline = sample;
+      } catch (error) {
+        console.warn("Gaze baseline calibration unavailable", error);
+      }
+    }
+
+    function gazeSignals(sample) {
+      if (!sample?.visible || !gazeBaseline) return [];
+      const signals = [];
+      if (Math.abs(sample.headYaw - gazeBaseline.headYaw) > 0.20 || Math.abs(sample.headPitch - gazeBaseline.headPitch) > 0.22) signals.push("head_direction");
+      if (GAZE_DIRECTIONS.some((direction) => sample.eyes[direction] > 0.62 && sample.eyes[direction] - gazeBaseline.eyes[direction] > 0.28)) signals.push("eye_direction");
+      return signals;
+    }
+
+    function startGazeSampling() {
+      stopGazeSampling();
+      document.getElementById("gaze-warning").classList.add("hidden");
+      if (gazeMonitorUnavailable) {
+        document.getElementById("gaze-monitor-status").textContent = "Local gaze monitoring is unavailable; your interview can continue, but gaze warnings will not be generated.";
+      } else if (!gazeBaseline) {
+        document.getElementById("gaze-monitor-status").textContent = "Gaze monitor is calibrating. Keep your face toward the screen while you answer.";
+      } else {
+        document.getElementById("gaze-monitor-status").textContent = "Gaze monitoring is active locally for this recorded answer.";
+      }
+      gazeAwaySince = null;
+      gazeNoFaceSince = null;
+      gazeSamplingTimer = setInterval(() => {
+        if (!isRecording || gazeEventPending) return;
+        try {
+          const sample = sampleLocalGaze();
+          if (!sample) return;
+          const now = Date.now();
+          let signals = gazeSignals(sample);
+          if (!sample.visible) {
+            gazeNoFaceSince ??= now;
+            if (now - gazeNoFaceSince >= 5000) {
+              signals = ["face_not_visible"];
+              gazeAwaySince ??= gazeNoFaceSince;
+            } else {
+              gazeAwaySince = null;
+            }
+          } else {
+            gazeNoFaceSince = null;
+            if (signals.length) gazeAwaySince ??= now;
+            else gazeAwaySince = null;
+          }
+          if (signals.length && gazeAwaySince && now - gazeAwaySince >= GAZE_WARNING_SUSTAIN_MS && now - gazeLastWarningAt >= GAZE_WARNING_COOLDOWN_MS) {
+            gazeLastWarningAt = now;
+            gazeAwaySince = now;
+            void reportGazeWarning(signals);
+          }
+        } catch (error) {
+          console.warn("Local gaze sample failed", error);
+        }
+      }, 700);
+    }
+
+    function stopGazeSampling() {
+      if (gazeSamplingTimer) clearInterval(gazeSamplingTimer);
+      gazeSamplingTimer = null;
+      gazeAwaySince = null;
+      gazeNoFaceSince = null;
+      document.getElementById("gaze-monitor-status").textContent = gazeMonitorUnavailable
+        ? "Local gaze monitoring is unavailable; your interview can continue, but gaze warnings will not be generated."
+        : "Gaze monitoring is paused while Whisper transcribes and the interview agent processes your answer.";
+    }
+
+    async function reportGazeWarning(signals) {
+      if (gazeEventPending || gazeReviewFlagged || !isRecording) return;
+      gazeEventPending = true;
+      const warningId = window.crypto?.randomUUID?.() || (Date.now().toString(36) + Math.random().toString(36).slice(2));
+      const warning = document.getElementById("gaze-warning");
+      try {
+        const response = await authFetch(`${API_URL}/interview/${encodeURIComponent(sessionId)}/gaze-warning`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ warning_id: warningId, signals }),
+        });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        gazeWarningCount = Number(data.warning_count || gazeWarningCount + 1);
+        gazeReviewFlagged = Boolean(data.flagged_for_review);
+        warning.textContent = data.flagged_for_review
+          ? `Warning ${gazeWarningCount}: Repeated off-screen gaze has been flagged for recruiter review. Your interview will continue.`
+          : `Warning ${gazeWarningCount} of 3: Please keep your face and eyes toward the screen while answering. Brief glances are okay.`;
+        warning.classList.remove("hidden");
+      } catch (error) {
+        console.warn("Could not save gaze warning", error);
+        warning.textContent = "Please look toward the screen while answering. Your connection prevented this warning from being saved.";
+        warning.classList.remove("hidden");
+      } finally {
+        gazeEventPending = false;
+      }
+    }
+
+    function startLightingMonitor() {
+      if (_lightingMonitor) return; // already running
+      const dot = document.getElementById("lighting-dot");
+      const label = document.getElementById("lighting-label");
+      if (!dot || !label) return;
+
+      function measureAndUpdate() {
+        try {
+          if (!videoElement.videoWidth || videoElement.readyState < 2) return;
+          const c = document.createElement("canvas");
+          c.width = 160; c.height = 120;
+          const cx = c.getContext("2d");
+          cx.drawImage(videoElement, 0, 0, 160, 120);
+          const px = cx.getImageData(0, 0, 160, 120);
+          const lum = frameLuminance(px);
+
+          if (lum < 80) {
+            dot.style.background = "#f97316";
+            label.textContent = "Lighting: Too dark — turn on more lights";
+            label.style.color = "#f97316";
+          } else if (lum < 110) {
+            dot.style.background = "#eab308";
+            label.textContent = "Lighting: A bit dim — improve lighting if possible";
+            label.style.color = "#eab308";
+          } else if (lum > 210) {
+            dot.style.background = "#a78bfa";
+            label.textContent = "Lighting: Too bright — avoid bright windows behind you";
+            label.style.color = "#a78bfa";
+          } else {
+            dot.style.background = "#10b981";
+            label.textContent = "Lighting: Good ✓";
+            label.style.color = "#10b981";
+          }
+        } catch (_) {}
+      }
+
+      measureAndUpdate();
+      _lightingMonitor = setInterval(measureAndUpdate, 1500);
+    }
+
+    /**
+     * Measures average luminance of an ImageData frame (0–255).
+     */
+    function frameLuminance(imageData) {
+      const d = imageData.data;
+      let sum = 0;
+      const pixels = d.length / 4;
+      for (let i = 0; i < d.length; i += 4) {
+        // BT.601 luma: 0.299R + 0.587G + 0.114B
+        sum += 0.299 * d[i] + 0.587 * d[i + 1] + 0.114 * d[i + 2];
+      }
+      return sum / pixels;
+    }
+
+    /**
+     * Applies gamma correction to an ImageData frame in-place.
+     * gamma < 1 → brightens (for dark frames)
+     * gamma > 1 → darkens (for overexposed frames)
+     */
+    function applyGamma(imageData, gamma) {
+      const d = imageData.data;
+      const inv = 1.0 / gamma;
+      for (let i = 0; i < d.length; i += 4) {
+        d[i]     = Math.min(255, Math.pow(d[i]     / 255, inv) * 255);
+        d[i + 1] = Math.min(255, Math.pow(d[i + 1] / 255, inv) * 255);
+        d[i + 2] = Math.min(255, Math.pow(d[i + 2] / 255, inv) * 255);
+      }
+      return imageData;
+    }
+
+    /**
+     * Applies a simple linear histogram stretch (auto-levels) to
+     * an ImageData frame in-place. Clips the bottom 2% and top 2%
+     * of pixel values to expand mid-range contrast.
+     */
+    function autoLevels(imageData) {
+      const d = imageData.data;
+      // Build combined luminance histogram
+      const hist = new Array(256).fill(0);
+      const pixels = d.length / 4;
+      for (let i = 0; i < d.length; i += 4) {
+        const lum = Math.round(0.299 * d[i] + 0.587 * d[i + 1] + 0.114 * d[i + 2]);
+        hist[lum]++;
+      }
+      const clipCount = pixels * 0.02; // 2% clip
+      let lo = 0, hi = 255, acc = 0;
+      for (let v = 0; v < 256; v++) { acc += hist[v]; if (acc >= clipCount) { lo = v; break; } }
+      acc = 0;
+      for (let v = 255; v >= 0; v--) { acc += hist[v]; if (acc >= clipCount) { hi = v; break; } }
+      if (hi <= lo) return imageData; // degenerate frame, skip
+      const scale = 255 / (hi - lo);
+      for (let i = 0; i < d.length; i += 4) {
+        d[i]     = Math.min(255, Math.max(0, (d[i]     - lo) * scale));
+        d[i + 1] = Math.min(255, Math.max(0, (d[i + 1] - lo) * scale));
+        d[i + 2] = Math.min(255, Math.max(0, (d[i + 2] - lo) * scale));
+      }
+      return imageData;
+    }
+
+    async function captureFrame() {
+      // Wait for camera to be ready
+      if (!videoElement.videoWidth || videoElement.videoWidth === 0 || videoElement.readyState < 2) {
+        await new Promise((resolve) => {
+          if (videoElement.readyState >= 2 && videoElement.videoWidth > 0) {
+            resolve();
+          } else {
+            videoElement.onloadeddata = resolve;
+            setTimeout(resolve, 800);
+          }
+        });
+      }
+
+      const canvas = document.createElement("canvas");
+      canvas.width = videoElement.videoWidth || 640;
+      canvas.height = videoElement.videoHeight || 480;
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+
+      // Measure frame brightness and apply adaptive correction
+      try {
+        const rawData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const lum = frameLuminance(rawData);
+
+        if (lum < 80) {
+          // Very dark frame: aggressive brightening (gamma 0.45) + auto-levels
+          const corrected = autoLevels(applyGamma(rawData, 0.45));
+          ctx.putImageData(corrected, 0, 0);
+        } else if (lum < 110) {
+          // Moderately dark: gentle brightening (gamma 0.65)
+          const corrected = applyGamma(rawData, 0.65);
+          ctx.putImageData(corrected, 0, 0);
+        } else if (lum > 200) {
+          // Overexposed: slight darkening (gamma 1.4) + auto-levels
+          const corrected = autoLevels(applyGamma(rawData, 1.4));
+          ctx.putImageData(corrected, 0, 0);
+        }
+        // 110–200: well-lit, no correction needed
+      } catch (_) {
+        // Canvas security error (cross-origin) — skip normalization
+      }
+
+      return new Promise((resolve) => {
+        canvas.toBlob((blob) => resolve(blob), "image/jpeg", 0.95);
+      });
+    }
+
+    async function runIdentityCheck() {
+      primeQuestionSpeech();
+      badge.textContent = "Checking...";
+      badge.className = "badge checking";
+      verifyBtn.disabled = true;
+      hideError();
+      failureAlert.classList.add("hidden");
+
+      try {
+        if (await initInterviewSession() === false) return;
+        questionCard.classList.add("hidden");
+        await calibrateGazeBaseline();
+        const frame = await captureFrame();
+        const formData = new FormData();
+        formData.append("candidate_id", candidateId);
+        formData.append("image", frame, "webcam.jpg");
+        formData.append("live_frame", frame, "live_frame.jpg");
+
+        const response = await authFetch(`${API_URL}/identity/${sessionId}/check`, {
+          method: "POST",
+          body: formData,
+        });
+
+        if (!response.ok) {
+          throw new Error("Identity verification request failed (" + response.status + ")");
+        }
+
+        const result = await response.json();
+
+        if (!result.verified) {
+          badge.textContent = "FAILED";
+          badge.className = "badge failed";
+          cameraPrompt.textContent = "✕ Verification failed. Ensure good lighting and look directly at camera.";
+          const reasonText = result.reason || result.failure_reason || "Face mismatch";
+          failureReason.textContent = "Reason: " + reasonText;
+          failureAlert.classList.remove("hidden");
+          verifyBtn.disabled = false;
+          verifyBtn.textContent = "🔄 Retry Identity Check";
+          verifyBtn.classList.remove("hidden");
+          questionCard.classList.add("hidden");
+          return;
+        }
+
+        // Passed verification
+        badge.textContent = "VERIFIED";
+        badge.className = "badge verified";
+        cameraPrompt.textContent = "Identity verified. Camera monitoring active.";
+        verifyBtn.classList.add("hidden");
+        failureAlert.classList.add("hidden");
+
+        if (await initInterviewSession() === false) return;
+        questionCard.classList.remove("hidden");
+        readQuestionAloud();
+      } catch (err) {
+        badge.textContent = "Error";
+        badge.className = "badge failed";
+        showError(err.message);
+        verifyBtn.disabled = false;
+        verifyBtn.textContent = "🔄 Retry Identity Check";
+      }
+    }
+
+    async function initInterviewSession() {
+      try {
+        let res = await authFetch(`${API_URL}/interview/${sessionId}`);
+        if (res.status === 410) {
+          window.location.replace(applicationId ? `/student?application=${encodeURIComponent(applicationId)}` : "/student");
+          return false;
+        }
+        if (!res.ok) {
+          const startResponse = await authFetch(`${API_URL}/interview/start`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              session_id: sessionId,
+              ...(applicationId ? { application_id: applicationId } : {
+                candidate_id: candidateId || window._authCandidateId,
+                candidate: { candidate_id: candidateId || window._authCandidateId, name: "Candidate" },
+                competencies: ["technical_skills", "problem_solving", "leadership"],
+              })
+            })
+          });
+          if (!startResponse.ok) {
+            const errData = await startResponse.json().catch(() => ({}));
+            if (startResponse.status === 410) {
+              window.location.replace(applicationId ? `/student?application=${encodeURIComponent(applicationId)}` : "/student");
+              return false;
+            }
+            throw new Error(errData.detail || "Could not initialize the interview.");
+          }
+          res = await authFetch(`${API_URL}/interview/${sessionId}`);
+          if (res.status === 410) {
+            window.location.replace(applicationId ? `/student?application=${encodeURIComponent(applicationId)}` : "/student");
+            return false;
+          }
+        }
+
+        if (res.ok) {
+          const data = await res.json();
+          candidateId = data.candidate_id || candidateId;
+          await loadInterviewDeadline();
+          if (data.interview_complete) {
+            window.location.replace(applicationId ? `/student?application=${encodeURIComponent(applicationId)}` : "/student");
+            return false;
+          }
+          setCurrentQuestion(data.next_question || data.current_question || "Waiting for interview question...", false);
+        } else {
+          throw new Error("Could not load the interview session.");
+        }
+
+        if (!applicationId) questionCard.classList.remove("hidden");
+        return true;
+      } catch (err) {
+        throw err;
+      }
+    }
+
+    async function submitAnswer() {
+      const answer = answerInput.value.trim();
+      if (!answer) return;
+      primeQuestionSpeech();
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Submitting...";
+
+      try {
+        const frame = await captureFrame();
+        const formData = new FormData();
+        formData.append("answer", answer);
+        formData.append("live_frame", frame, "live_frame.jpg");
+
+        const response = await authFetch(`${API_URL}/interview/${sessionId}/answer`, {
+          method: "POST",
+          body: formData,
+        });
+
+        if (!response.ok) {
+          throw new Error("Answer submission failed (" + response.status + ")");
+        }
+
+        const data = await response.json();
+
+        if (data.identity_verified === false) {
+          badge.textContent = "FAILED";
+          badge.className = "badge failed";
+          questionCard.classList.add("hidden");
+          failureAlert.classList.remove("hidden");
+          return;
+        }
+
+        if (data.interview_complete) {
+          showInterviewComplete();
+        } else {
+          setCurrentQuestion(data.next_question || "Question complete.");
+          answerInput.value = "";
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Submit Answer";
+        }
+      } catch (err) {
+        showError(err.message);
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit Answer";
+      }
+    }
+
+    let turnNumber = 1;
+    let competencies = { technical_skills: null, problem_solving: null, leadership: null };
+    let isProcessing = false;
+    let isRecording = false;
+    let mediaRecorder = null;
+    let audioChunks = [];
+    let audioStream = null;
+    let lastRecordedAudio = null;
+    let lastRecordedExtension = "webm";
+
+    function updateProgressUI(turn, comps) {
+      if (turn) {
+        turnNumber = turn;
+        document.getElementById("turn-badge").textContent = `Question ${turnNumber}`;
+      }
+
+      if (comps) {
+        competencies = comps;
+        const setScore = (idScore, idBar, val) => {
+          const scoreEl = document.getElementById(idScore);
+          const barEl = document.getElementById(idBar);
+          if (val == null) {
+            scoreEl.textContent = "--";
+            barEl.style.width = "0%";
+          } else {
+            const pct = Math.round(val * 100);
+            scoreEl.textContent = pct + "%";
+            barEl.style.width = pct + "%";
+          }
+        };
+
+        setScore("score-technical", "bar-technical", comps.technical_skills);
+        setScore("score-problem", "bar-problem", comps.problem_solving);
+        setScore("score-leadership", "bar-leadership", comps.leadership);
+      }
+    }
+
+    async function toggleRecording() {
+      if (isProcessing) return;
+      primeQuestionSpeech();
+      if (isRecording) {
+        stopRecording();
+      } else {
+        await startRecording();
+      }
+    }
+
+    async function startRecording() {
+      try {
+        hideError();
+        audioStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        audioChunks = [];
+
+        const recorderType = [
+          "audio/webm;codecs=opus",
+          "audio/webm",
+          "audio/mp4",
+          "audio/ogg;codecs=opus",
+        ].find((type) => MediaRecorder.isTypeSupported(type));
+        mediaRecorder = new MediaRecorder(audioStream, recorderType ? { mimeType: recorderType } : undefined);
+
+        mediaRecorder.ondataavailable = (event) => {
+          if (event.data && event.data.size > 0) {
+            audioChunks.push(event.data);
+          }
+        };
+
+        mediaRecorder.onstop = async () => {
+          const mimeType = mediaRecorder?.mimeType || audioChunks.find((chunk) => chunk.type)?.type || "audio/webm";
+          const audioBlob = new Blob(audioChunks, { type: mimeType });
+          const extension = mimeType.includes("mp4") ? "mp4" : mimeType.includes("ogg") ? "ogg" : "webm";
+          lastRecordedAudio = audioBlob;
+          lastRecordedExtension = extension;
+          const url = URL.createObjectURL(audioBlob);
+
+          const audioPlayer = document.getElementById("audio-player");
+          audioPlayer.src = url;
+          document.getElementById("audio-preview-container").classList.remove("hidden");
+
+          // Upload audio to backend and transcribe with Whisper
+          await uploadAudio(audioBlob, extension);
+
+          // Stop all audio tracks
+          if (audioStream) {
+            audioStream.getTracks().forEach((track) => track.stop());
+          }
+        };
+
+        mediaRecorder.start();
+        isRecording = true;
+        startGazeSampling();
+
+        const toggleBtn = document.getElementById("record-toggle-btn");
+        toggleBtn.textContent = "⏹ Stop Answer";
+        toggleBtn.className = "btn btn-stop";
+        document.getElementById("recording-indicator").classList.remove("hidden");
+      } catch (err) {
+        console.error("Microphone error:", err);
+        showError("Microphone access error: " + err.message);
+      }
+    }
+
+    function stopRecording() {
+      if (!mediaRecorder) return;
+      stopGazeSampling();
+      mediaRecorder.stop();
+      isRecording = false;
+
+      const toggleBtn = document.getElementById("record-toggle-btn");
+      toggleBtn.textContent = "🎙 Start Answer";
+      toggleBtn.className = "btn btn-record";
+      document.getElementById("recording-indicator").classList.add("hidden");
+    }
+
+    async function uploadAudio(blob, extension = "webm") {
+      const uploadStatus = document.getElementById("upload-status");
+      const processingIndicator = document.getElementById("processing-indicator");
+      const transcriptSection = document.getElementById("transcript-section");
+      const transcriptDisplay = document.getElementById("transcript-display");
+      const toggleBtn = document.getElementById("record-toggle-btn");
+      const retryBtn = document.getElementById("retry-audio-btn");
+      let allowRetry = false;
+
+      isProcessing = true;
+      toggleBtn.disabled = true;
+      processingIndicator.classList.remove("hidden");
+      uploadStatus.textContent = "Transcribing with Whisper & reasoning next question...";
+      uploadStatus.className = "alert alert-warning";
+
+      try {
+        const formData = new FormData();
+        if (!blob || blob.size === 0) throw new Error("No audio was captured. Please record your answer again.");
+        formData.append("audio", blob, `answer.${extension}`);
+        const liveFrame = await captureFrame();
+        formData.append("live_frame", liveFrame, "live_frame.jpg");
+
+        const response = await authFetch(`${API_URL}/interview/${sessionId}/answer/audio`, {
+          method: "POST",
+          body: formData,
+        });
+
+        if (!response.ok) {
+          const errData = await response.json().catch(() => ({}));
+          const requestId = errData?.error?.request_id || response.headers.get("X-Request-ID");
+          if (errData.transcript) {
+            transcriptDisplay.textContent = `“${errData.transcript}”`;
+            transcriptSection.classList.remove("hidden");
+            document.getElementById("answer-input").value = errData.transcript;
+            document.getElementById("text-answer-details").open = true;
+          } else {
+            allowRetry = response.status >= 500 || response.status === 429;
+          }
+          let errorMessage = errData.detail || "Audio answer submission failed (" + response.status + ")";
+          if (requestId && response.status >= 500) errorMessage += ` (Request ID: ${requestId})`;
+          throw new Error(errorMessage);
+        }
+
+        const data = await response.json();
+        retryBtn.classList.add("hidden");
+        console.log("Transcript:", data.transcript);
+        console.log("Next question:", data.question);
+
+        uploadStatus.className = "alert alert-success";
+        uploadStatus.textContent = `✓ Answer processed (Decision: ${data.decision || "evaluated"})`;
+
+        if (data.transcript) {
+          transcriptDisplay.textContent = `“${data.transcript}”`;
+          transcriptSection.classList.remove("hidden");
+        }
+
+        if (data.turn_number || data.competency_scores) {
+          updateProgressUI(data.turn_number, data.competency_scores);
+        }
+
+        if (data.complete || data.interview_complete) {
+          showInterviewComplete();
+        } else if (data.question || data.next_question) {
+          setCurrentQuestion(data.question || data.next_question);
+        }
+
+        return data;
+      } catch (err) {
+        console.error("Audio answer processing failed:", err);
+        uploadStatus.className = "alert alert-danger";
+        uploadStatus.textContent = err.message;
+        if (allowRetry || /failed to fetch|network/i.test(err.message)) retryBtn.classList.remove("hidden");
+        else retryBtn.classList.add("hidden");
+        showError(err.message);
+      } finally {
+        isProcessing = false;
+        toggleBtn.disabled = false;
+        processingIndicator.classList.add("hidden");
+      }
+    }
+
+    function retryAudioUpload() {
+      if (lastRecordedAudio && !isProcessing) uploadAudio(lastRecordedAudio, lastRecordedExtension);
+    }
+
+    function showError(msg) {
+      generalError.textContent = msg;
+      generalError.classList.remove("hidden");
+    }
+
+    function hideError() {
+      generalError.classList.add("hidden");
+    }
+
+    // Launch camera automatically on page load
+    window.addEventListener("DOMContentLoaded", async function() {
+      var tok = getToken();
+      if (!tok) { showLoginOverlay(); return; }
+      try {
+        var res = await fetch(API_URL + '/auth/me', {headers:{Authorization:'Bearer '+tok}});
+        if (!res.ok) throw new Error('Sign in again to continue.');
+        var user = await res.json();
+        if (user.role !== 'candidate') { location.replace('/recruiter'); return; }
+        if (applicationId) {
+          const applicationsResponse = await authFetch(API_URL + '/applications/mine');
+          if (applicationsResponse.ok) {
+            const applications = await applicationsResponse.json();
+            const application = applications.find(item => item.application_id === applicationId);
+            if (application?.status === 'interview_completed') {
+              location.replace('/student?application=' + encodeURIComponent(applicationId));
+              return;
+            }
+          }
+        }
+        setToken(tok);
+        hideLoginOverlay();
+        startCamera();
+      } catch (_) { clearToken(); showLoginOverlay(); }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+[
+  {
+    "trace_id": "TRACE_001",
+    "turn": 1,
+    "answer": "I built backend microservices using FastAPI and PostgreSQL.",
+    "trigger": "FastAPI and PostgreSQL",
+    "signals": ["backend_development", "databases"],
+    "competency": "technical_skills",
+    "reasoning": "Candidate demonstrated core backend development and database technologies. Deepening technical depth.",
+    "decision": "deepen",
+    "question": "How did you manage connection pooling and asynchronous request handling in FastAPI?",
+    "confidence": 0.88
+  },
+  {
+    "trace_id": "TRACE_002",
+    "turn": 2,
+    "answer": "I optimized our API and also mentored two junior developers on our team.",
+    "trigger": "mentored two junior developers",
+    "signals": ["problem_solving", "leadership"],
+    "competency": "problem_solving",
+    "reasoning": "Candidate introduced meaningful leadership experience not covered by the current technical competency. Pivoting to explore leadership.",
+    "decision": "pivot",
+    "discovered_competency": "leadership",
+    "question": "You mentioned mentoring junior engineers. Can you walk me through your approach to their onboarding and code reviews?",
+    "confidence": 0.85
+  },
+  {
+    "trace_id": "TRACE_003",
+    "turn": 3,
+    "answer": "I organized weekly 1-on-1 pairing sessions and guided them until they shipped their first production feature.",
+    "trigger": "weekly 1-on-1 pairing",
+    "signals": ["leadership"],
+    "competency": "leadership",
+    "reasoning": "Strong evidence established for leadership. Transitioning to next planned competency.",
+    "decision": "next_competency",
+    "question": "Thank you for that thorough explanation. Let's move on to explore your experience with system design.",
+    "confidence": 0.90
+  },
+  {
+    "trace_id": "TRACE_004",
+    "turn": 4,
+    "answer": "I designed partitioned Kafka clusters processing 15,000 events/sec.",
+    "trigger": "Kafka clusters processing 15,000 events/sec",
+    "signals": ["system_design"],
+    "competency": "system_design",
+    "reasoning": "All target competencies thoroughly evaluated. Concluding interview.",
+    "decision": "conclude",
+    "question": "Thank you for sharing your experience. That concludes our technical interview today.",
+    "confidence": 0.92
+  },
+  {
+    "trace_id": "TRACE_005_INVALID_TRIGGER",
+    "turn": 2,
+    "answer": "I optimized the database indexing.",
+    "trigger": "mentioned leadership experience",
+    "signals": ["databases"],
+    "competency": "databases",
+    "reasoning": "Candidate discussed database indexing.",
+    "decision": "pivot",
+    "question": "Explain your SQL optimization.",
+    "confidence": 0.50
+  },
+  {
+    "trace_id": "TRACE_006_INCOMPATIBLE_DECISION",
+    "turn": 3,
+    "answer": "I wrote unit tests with Pytest.",
+    "trigger": "unit tests with Pytest",
+    "signals": ["software_engineering"],
+    "competency": "software_engineering",
+    "reasoning": "Candidate demonstrated testing skills.",
+    "decision": "conclude",
+    "question": "What mocking fixtures did you configure in Pytest?",
+    "confidence": 0.70
+  }
+]

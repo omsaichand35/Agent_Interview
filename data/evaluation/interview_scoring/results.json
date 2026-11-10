@@ -1,0 +1,148 @@
+{
+  "equivalent_pairs": {
+    "total_pairs": 4,
+    "mean_absolute_difference": 0.0075,
+    "correlation": 0.9546,
+    "tolerance_pass_rate": 1.0,
+    "pairs": [
+      {
+        "case_id": "PAIR_001",
+        "competency": "problem_solving",
+        "score_a": 0.79,
+        "score_b": 0.79,
+        "difference": 0.0,
+        "max_allowed_diff": 0.08,
+        "passed": true
+      },
+      {
+        "case_id": "PAIR_002",
+        "competency": "system_design",
+        "score_a": 0.83,
+        "score_b": 0.83,
+        "difference": 0.0,
+        "max_allowed_diff": 0.08,
+        "passed": true
+      },
+      {
+        "case_id": "PAIR_003",
+        "competency": "databases",
+        "score_a": 0.82,
+        "score_b": 0.82,
+        "difference": 0.0,
+        "max_allowed_diff": 0.08,
+        "passed": true
+      },
+      {
+        "case_id": "PAIR_004",
+        "competency": "leadership",
+        "score_a": 0.78,
+        "score_b": 0.75,
+        "difference": 0.03,
+        "max_allowed_diff": 0.08,
+        "passed": true
+      }
+    ]
+  },
+  "evidence_sensitivity": {
+    "total_cases": 3,
+    "all_passed": true,
+    "average_score_delta": 0.49,
+    "cases": [
+      {
+        "case_id": "SENS_001",
+        "competency": "backend_development",
+        "weak_score": 0.3,
+        "strong_score": 0.79,
+        "score_delta": 0.49,
+        "min_required_delta": 0.3,
+        "passed": true
+      },
+      {
+        "case_id": "SENS_002",
+        "competency": "cloud_devops",
+        "weak_score": 0.3,
+        "strong_score": 0.75,
+        "score_delta": 0.45,
+        "min_required_delta": 0.3,
+        "passed": true
+      },
+      {
+        "case_id": "SENS_003",
+        "competency": "software_engineering",
+        "weak_score": 0.3,
+        "strong_score": 0.83,
+        "score_delta": 0.53,
+        "min_required_delta": 0.3,
+        "passed": true
+      }
+    ]
+  },
+  "unsupported_claims": {
+    "total_cases": 2,
+    "all_properly_capped": true,
+    "cases": [
+      {
+        "case_id": "UNSUPP_001",
+        "competency": "system_design",
+        "score": 0.3,
+        "evidence_quality": 0.25,
+        "max_allowed_score": 0.35,
+        "capped_properly": true
+      },
+      {
+        "case_id": "UNSUPP_002",
+        "competency": "problem_solving",
+        "score": 0.3,
+        "evidence_quality": 0.25,
+        "max_allowed_score": 0.35,
+        "capped_properly": true
+      }
+    ]
+  },
+  "multi_turn_aggregation": {
+    "total_cases": 2,
+    "all_passed": true,
+    "cases": [
+      {
+        "case_id": "AGG_001",
+        "competency": "backend_development",
+        "turn_scores": [
+          0.35,
+          0.85,
+          0.88
+        ],
+        "aggregate_score": 0.749,
+        "min_expected_score": 0.74,
+        "passed": true
+      },
+      {
+        "case_id": "AGG_002",
+        "competency": "databases",
+        "turn_scores": [
+          0.9,
+          0.92,
+          0.3
+        ],
+        "aggregate_score": 0.771,
+        "min_expected_score": 0.74,
+        "passed": true
+      }
+    ]
+  },
+  "stability": {
+    "repeated_evaluations": 10,
+    "variance": 0.0,
+    "standard_deviation": 0.0,
+    "is_stable": true
+  },
+  "interview_scorer": {
+    "sample_competency_scores": {
+      "technical_skills": 0.82,
+      "problem_solving": 0.8,
+      "system_design": 0.78,
+      "leadership": 0.75
+    },
+    "final_interview_score": 0.787,
+    "valid_range": true
+  }
+}

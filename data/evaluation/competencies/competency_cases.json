@@ -1,0 +1,182 @@
+[
+  {
+    "case_id": "COMP_001",
+    "planned_competencies": ["problem_solving", "technical_skills"],
+    "current_competency": "problem_solving",
+    "question": "Tell me about a difficult technical problem you solved.",
+    "answer": "I optimized our API and mentored two junior developers.",
+    "expected_competencies": ["problem_solving", "backend_development", "leadership"],
+    "expected_discovered": ["leadership"]
+  },
+  {
+    "case_id": "COMP_002",
+    "planned_competencies": ["system_design", "backend_development"],
+    "current_competency": "system_design",
+    "question": "How did you scale your system under load?",
+    "answer": "I architected partitioned PostgreSQL clusters with Redis caching, reducing p99 latency to 28ms.",
+    "expected_competencies": ["system_design", "databases", "problem_solving"],
+    "expected_discovered": ["databases"]
+  },
+  {
+    "case_id": "COMP_003",
+    "planned_competencies": ["technical_skills"],
+    "current_competency": "technical_skills",
+    "question": "What frameworks do you use?",
+    "answer": "While refactoring the backend in FastAPI, I configured Docker and set up the AWS deployment pipeline.",
+    "expected_competencies": ["backend_development", "cloud_devops"],
+    "expected_discovered": ["cloud_devops"]
+  },
+  {
+    "case_id": "COMP_004",
+    "planned_competencies": ["problem_solving"],
+    "current_competency": "problem_solving",
+    "question": "Where were you based during that project?",
+    "answer": "I worked from Bangalore and used Jira for ticket tracking.",
+    "expected_competencies": [],
+    "expected_discovered": []
+  },
+  {
+    "case_id": "COMP_005",
+    "planned_competencies": ["technical_skills", "problem_solving"],
+    "current_competency": "technical_skills",
+    "question": "How did you handle quality assurance?",
+    "answer": "I instituted strict code reviews and wrote automated integration suites using Pytest.",
+    "expected_competencies": ["software_engineering"],
+    "expected_discovered": ["software_engineering"]
+  },
+  {
+    "case_id": "COMP_006",
+    "planned_competencies": ["system_design", "technical_skills"],
+    "current_competency": "system_design",
+    "question": "Describe a complex distributed workflow you built.",
+    "answer": "I designed distributed transaction management using Kafka, deployed it on Kubernetes, and supervised 3 engineers.",
+    "expected_competencies": ["system_design", "cloud_devops", "leadership"],
+    "expected_discovered": ["cloud_devops", "leadership"]
+  },
+  {
+    "case_id": "COMP_007",
+    "planned_competencies": ["databases"],
+    "current_competency": "databases",
+    "question": "Which database engines have you worked with?",
+    "answer": "I have extensive production experience with Postgres, relational database schemas, and Redis.",
+    "expected_competencies": ["databases"],
+    "expected_discovered": []
+  },
+  {
+    "case_id": "COMP_008",
+    "planned_competencies": ["leadership"],
+    "current_competency": "leadership",
+    "question": "How do you guide junior teammates?",
+    "answer": "I led developers on our squad, running daily pairing sessions and mentoring engineers.",
+    "expected_competencies": ["leadership"],
+    "expected_discovered": []
+  },
+  {
+    "case_id": "COMP_009",
+    "planned_competencies": ["cloud_devops"],
+    "current_competency": "cloud_devops",
+    "question": "What is your experience with container orchestration?",
+    "answer": "I managed container orchestration on AWS EKS and built CI/CD deployment automation.",
+    "expected_competencies": ["cloud_devops"],
+    "expected_discovered": []
+  },
+  {
+    "case_id": "COMP_010",
+    "planned_competencies": ["system_design"],
+    "current_competency": "system_design",
+    "question": "Did you architect the distributed cluster?",
+    "answer": "Actually, I didn't design the architecture myself; I only wrote basic CRUD endpoints in Flask under senior guidance.",
+    "expected_competencies": ["backend_development"],
+    "expected_discovered": ["backend_development"]
+  },
+  {
+    "case_id": "COMP_011",
+    "planned_competencies": ["technical_skills"],
+    "current_competency": "technical_skills",
+    "question": "What tools did your team communicate with?",
+    "answer": "We used Slack for chat and held daily Zoom standups before lunch.",
+    "expected_competencies": [],
+    "expected_discovered": []
+  },
+  {
+    "case_id": "COMP_012",
+    "planned_competencies": ["problem_solving", "databases"],
+    "current_competency": "problem_solving",
+    "question": "Can you describe a performance bottleneck you investigated?",
+    "answer": "I debugged a connection pool starvation issue in PostgreSQL and resolved the memory leak.",
+    "expected_competencies": ["problem_solving", "databases"],
+    "expected_discovered": []
+  },
+  {
+    "case_id": "COMP_013",
+    "planned_competencies": ["backend_development"],
+    "current_competency": "backend_development",
+    "question": "Tell me about your API development work.",
+    "answer": "Built high-throughput REST APIs using FastAPI, and also managed a small engineering team of four.",
+    "expected_competencies": ["backend_development", "leadership"],
+    "expected_discovered": ["leadership"]
+  },
+  {
+    "case_id": "COMP_014",
+    "planned_competencies": ["technical_skills"],
+    "current_competency": "technical_skills",
+    "question": "Where did you study?",
+    "answer": "I graduated from university in London and like playing badminton on weekends.",
+    "expected_competencies": [],
+    "expected_discovered": []
+  },
+  {
+    "case_id": "COMP_015",
+    "planned_competencies": ["software_engineering", "problem_solving"],
+    "current_competency": "software_engineering",
+    "question": "How do you test your software?",
+    "answer": "I write comprehensive Pytest unit tests, manage Git version control, and debug flakiness in CI/CD.",
+    "expected_competencies": ["software_engineering", "cloud_devops", "problem_solving"],
+    "expected_discovered": ["cloud_devops"]
+  },
+  {
+    "case_id": "COMP_016",
+    "planned_competencies": ["problem_solving"],
+    "current_competency": "problem_solving",
+    "question": "What happened during the incident?",
+    "answer": "I discovered the root cause of the service crash and optimized the database query index.",
+    "expected_competencies": ["problem_solving", "databases"],
+    "expected_discovered": ["databases"]
+  },
+  {
+    "case_id": "COMP_017",
+    "planned_competencies": ["backend_development"],
+    "current_competency": "backend_development",
+    "question": "Which backend frameworks do you prefer?",
+    "answer": "I build microservices using Spring Boot and FastAPI.",
+    "expected_competencies": ["backend_development"],
+    "expected_discovered": []
+  },
+  {
+    "case_id": "COMP_018",
+    "planned_competencies": ["system_design"],
+    "current_competency": "system_design",
+    "question": "What office tools do you use?",
+    "answer": "I use Confluence for documentation, Notion for personal notes, and Trello boards.",
+    "expected_competencies": [],
+    "expected_discovered": []
+  },
+  {
+    "case_id": "COMP_019",
+    "planned_competencies": ["cloud_devops"],
+    "current_competency": "cloud_devops",
+    "question": "Tell me about your cloud infrastructure experience.",
+    "answer": "I automated infrastructure provisioning using Terraform and deployed services on Kubernetes.",
+    "expected_competencies": ["cloud_devops"],
+    "expected_discovered": []
+  },
+  {
+    "case_id": "COMP_020",
+    "planned_competencies": ["technical_skills"],
+    "current_competency": "technical_skills",
+    "question": "Tell me about a time you led an initiative.",
+    "answer": "I spearheaded team leadership for our migration project, coached juniors, and architected the new system.",
+    "expected_competencies": ["leadership", "system_design"],
+    "expected_discovered": ["leadership", "system_design"]
+  }
+]

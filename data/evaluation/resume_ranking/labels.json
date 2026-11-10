@@ -1,0 +1,579 @@
+[
+  {
+    "candidate_id": "C001",
+    "job_id": "JOB001",
+    "relevance": 5,
+    "suitable": true,
+    "competencies": {
+      "technical_skills": 5,
+      "problem_solving": 5,
+      "system_design": 5,
+      "software_engineering": 5,
+      "databases": 5,
+      "cloud_devops": 5,
+      "communication": 4,
+      "leadership": 5,
+      "adaptability": 4,
+      "project_experience": 5
+    },
+    "evidence_annotations": [
+      {
+        "competency": "system_design",
+        "quote": "re-architect legacy monolithic APIs into high-throughput FastAPI microservices handling 45,000 req/sec",
+        "correctness": 5
+      },
+      {
+        "competency": "leadership",
+        "quote": "Led a team of 6 engineers",
+        "correctness": 5
+      }
+    ]
+  },
+  {
+    "candidate_id": "C002",
+    "job_id": "JOB001",
+    "relevance": 5,
+    "suitable": true,
+    "competencies": {
+      "technical_skills": 5,
+      "problem_solving": 5,
+      "system_design": 5,
+      "software_engineering": 5,
+      "databases": 5,
+      "cloud_devops": 4,
+      "communication": 5,
+      "leadership": 4,
+      "adaptability": 4,
+      "project_experience": 5
+    },
+    "evidence_annotations": [
+      {
+        "competency": "system_design",
+        "quote": "Designed distributed transaction management workflows using Kafka and FastAPI",
+        "correctness": 5
+      }
+    ]
+  },
+  {
+    "candidate_id": "C003",
+    "job_id": "JOB001",
+    "relevance": 5,
+    "suitable": true,
+    "competencies": {
+      "technical_skills": 5,
+      "problem_solving": 5,
+      "system_design": 4,
+      "software_engineering": 5,
+      "databases": 4,
+      "cloud_devops": 4,
+      "communication": 4,
+      "leadership": 4,
+      "adaptability": 4,
+      "project_experience": 5
+    }
+  },
+  {
+    "candidate_id": "C004",
+    "job_id": "JOB001",
+    "relevance": 4,
+    "suitable": true,
+    "competencies": {
+      "technical_skills": 5,
+      "problem_solving": 4,
+      "system_design": 4,
+      "software_engineering": 4,
+      "databases": 4,
+      "cloud_devops": 4,
+      "communication": 4,
+      "leadership": 3,
+      "adaptability": 4,
+      "project_experience": 4
+    }
+  },
+  {
+    "candidate_id": "C005",
+    "job_id": "JOB001",
+    "relevance": 5,
+    "suitable": true,
+    "competencies": {
+      "technical_skills": 5,
+      "problem_solving": 5,
+      "system_design": 5,
+      "software_engineering": 5,
+      "databases": 5,
+      "cloud_devops": 5,
+      "communication": 4,
+      "leadership": 3,
+      "adaptability": 4,
+      "project_experience": 5
+    }
+  },
+  {
+    "candidate_id": "C006",
+    "job_id": "JOB001",
+    "relevance": 4,
+    "suitable": true,
+    "competencies": {
+      "technical_skills": 4,
+      "problem_solving": 4,
+      "system_design": 4,
+      "software_engineering": 5,
+      "databases": 4,
+      "cloud_devops": 4,
+      "communication": 4,
+      "leadership": 3,
+      "adaptability": 4,
+      "project_experience": 4
+    }
+  },
+  {
+    "candidate_id": "C007",
+    "job_id": "JOB001",
+    "relevance": 5,
+    "suitable": true,
+    "competencies": {
+      "technical_skills": 5,
+      "problem_solving": 5,
+      "system_design": 5,
+      "software_engineering": 5,
+      "databases": 5,
+      "cloud_devops": 5,
+      "communication": 5,
+      "leadership": 5,
+      "adaptability": 5,
+      "project_experience": 5
+    }
+  },
+  {
+    "candidate_id": "C008",
+    "job_id": "JOB001",
+    "relevance": 4,
+    "suitable": true,
+    "competencies": {
+      "technical_skills": 4,
+      "problem_solving": 4,
+      "system_design": 4,
+      "software_engineering": 4,
+      "databases": 4,
+      "cloud_devops": 5,
+      "communication": 4,
+      "leadership": 3,
+      "adaptability": 4,
+      "project_experience": 4
+    }
+  },
+  {
+    "candidate_id": "C009",
+    "job_id": "JOB001",
+    "relevance": 4,
+    "suitable": true,
+    "competencies": {
+      "technical_skills": 4,
+      "problem_solving": 4,
+      "system_design": 4,
+      "software_engineering": 4,
+      "databases": 4,
+      "cloud_devops": 4,
+      "communication": 4,
+      "leadership": 4,
+      "adaptability": 4,
+      "project_experience": 4
+    }
+  },
+  {
+    "candidate_id": "C010",
+    "job_id": "JOB001",
+    "relevance": 5,
+    "suitable": true,
+    "competencies": {
+      "technical_skills": 5,
+      "problem_solving": 5,
+      "system_design": 5,
+      "software_engineering": 5,
+      "databases": 4,
+      "cloud_devops": 4,
+      "communication": 5,
+      "leadership": 4,
+      "adaptability": 4,
+      "project_experience": 5
+    }
+  },
+  {
+    "candidate_id": "C011",
+    "job_id": "JOB001",
+    "relevance": 3,
+    "suitable": false,
+    "competencies": {
+      "technical_skills": 3,
+      "problem_solving": 3,
+      "system_design": 3,
+      "software_engineering": 3,
+      "databases": 3,
+      "cloud_devops": 3,
+      "communication": 3,
+      "leadership": 2,
+      "adaptability": 3,
+      "project_experience": 3
+    }
+  },
+  {
+    "candidate_id": "C012",
+    "job_id": "JOB001",
+    "relevance": 3,
+    "suitable": false,
+    "competencies": {
+      "technical_skills": 3,
+      "problem_solving": 3,
+      "system_design": 2,
+      "software_engineering": 3,
+      "databases": 3,
+      "cloud_devops": 2,
+      "communication": 3,
+      "leadership": 2,
+      "adaptability": 3,
+      "project_experience": 3
+    }
+  },
+  {
+    "candidate_id": "C013",
+    "job_id": "JOB001",
+    "relevance": 3,
+    "suitable": false,
+    "competencies": {
+      "technical_skills": 3,
+      "problem_solving": 3,
+      "system_design": 2,
+      "software_engineering": 3,
+      "databases": 3,
+      "cloud_devops": 2,
+      "communication": 3,
+      "leadership": 2,
+      "adaptability": 3,
+      "project_experience": 3
+    }
+  },
+  {
+    "candidate_id": "C014",
+    "job_id": "JOB001",
+    "relevance": 3,
+    "suitable": false,
+    "competencies": {
+      "technical_skills": 3,
+      "problem_solving": 3,
+      "system_design": 2,
+      "software_engineering": 3,
+      "databases": 3,
+      "cloud_devops": 2,
+      "communication": 3,
+      "leadership": 2,
+      "adaptability": 3,
+      "project_experience": 3
+    }
+  },
+  {
+    "candidate_id": "C015",
+    "job_id": "JOB001",
+    "relevance": 3,
+    "suitable": false,
+    "competencies": {
+      "technical_skills": 3,
+      "problem_solving": 3,
+      "system_design": 2,
+      "software_engineering": 3,
+      "databases": 3,
+      "cloud_devops": 2,
+      "communication": 3,
+      "leadership": 2,
+      "adaptability": 3,
+      "project_experience": 3
+    }
+  },
+  {
+    "candidate_id": "C016",
+    "job_id": "JOB001",
+    "relevance": 3,
+    "suitable": false,
+    "competencies": {
+      "technical_skills": 3,
+      "problem_solving": 3,
+      "system_design": 2,
+      "software_engineering": 3,
+      "databases": 3,
+      "cloud_devops": 2,
+      "communication": 3,
+      "leadership": 2,
+      "adaptability": 3,
+      "project_experience": 3
+    }
+  },
+  {
+    "candidate_id": "C017",
+    "job_id": "JOB001",
+    "relevance": 3,
+    "suitable": false,
+    "competencies": {
+      "technical_skills": 3,
+      "problem_solving": 3,
+      "system_design": 2,
+      "software_engineering": 3,
+      "databases": 3,
+      "cloud_devops": 2,
+      "communication": 3,
+      "leadership": 2,
+      "adaptability": 3,
+      "project_experience": 3
+    }
+  },
+  {
+    "candidate_id": "C018",
+    "job_id": "JOB001",
+    "relevance": 3,
+    "suitable": false,
+    "competencies": {
+      "technical_skills": 3,
+      "problem_solving": 3,
+      "system_design": 2,
+      "software_engineering": 3,
+      "databases": 3,
+      "cloud_devops": 3,
+      "communication": 3,
+      "leadership": 2,
+      "adaptability": 3,
+      "project_experience": 3
+    }
+  },
+  {
+    "candidate_id": "C019",
+    "job_id": "JOB001",
+    "relevance": 2,
+    "suitable": false,
+    "competencies": {
+      "technical_skills": 2,
+      "problem_solving": 2,
+      "system_design": 1,
+      "software_engineering": 2,
+      "databases": 2,
+      "cloud_devops": 1,
+      "communication": 2,
+      "leadership": 1,
+      "adaptability": 3,
+      "project_experience": 2
+    }
+  },
+  {
+    "candidate_id": "C020",
+    "job_id": "JOB001",
+    "relevance": 2,
+    "suitable": false,
+    "competencies": {
+      "technical_skills": 2,
+      "problem_solving": 2,
+      "system_design": 1,
+      "software_engineering": 2,
+      "databases": 1,
+      "cloud_devops": 1,
+      "communication": 2,
+      "leadership": 1,
+      "adaptability": 3,
+      "project_experience": 2
+    }
+  },
+  {
+    "candidate_id": "C021",
+    "job_id": "JOB001",
+    "relevance": 2,
+    "suitable": false,
+    "competencies": {
+      "technical_skills": 2,
+      "problem_solving": 2,
+      "system_design": 1,
+      "software_engineering": 2,
+      "databases": 2,
+      "cloud_devops": 1,
+      "communication": 2,
+      "leadership": 1,
+      "adaptability": 2,
+      "project_experience": 2
+    }
+  },
+  {
+    "candidate_id": "C022",
+    "job_id": "JOB001",
+    "relevance": 2,
+    "suitable": false,
+    "competencies": {
+      "technical_skills": 2,
+      "problem_solving": 2,
+      "system_design": 1,
+      "software_engineering": 2,
+      "databases": 1,
+      "cloud_devops": 1,
+      "communication": 3,
+      "leadership": 1,
+      "adaptability": 2,
+      "project_experience": 2
+    }
+  },
+  {
+    "candidate_id": "C023",
+    "job_id": "JOB001",
+    "relevance": 2,
+    "suitable": false,
+    "competencies": {
+      "technical_skills": 2,
+      "problem_solving": 2,
+      "system_design": 1,
+      "software_engineering": 1,
+      "databases": 2,
+      "cloud_devops": 1,
+      "communication": 2,
+      "leadership": 1,
+      "adaptability": 2,
+      "project_experience": 2
+    }
+  },
+  {
+    "candidate_id": "C024",
+    "job_id": "JOB001",
+    "relevance": 2,
+    "suitable": false,
+    "competencies": {
+      "technical_skills": 1,
+      "problem_solving": 2,
+      "system_design": 1,
+      "software_engineering": 1,
+      "databases": 1,
+      "cloud_devops": 1,
+      "communication": 2,
+      "leadership": 1,
+      "adaptability": 2,
+      "project_experience": 1
+    }
+  },
+  {
+    "candidate_id": "C025",
+    "job_id": "JOB001",
+    "relevance": 1,
+    "suitable": false,
+    "competencies": {
+      "technical_skills": 1,
+      "problem_solving": 2,
+      "system_design": 1,
+      "software_engineering": 1,
+      "databases": 1,
+      "cloud_devops": 1,
+      "communication": 3,
+      "leadership": 1,
+      "adaptability": 2,
+      "project_experience": 1
+    }
+  },
+  {
+    "candidate_id": "C026",
+    "job_id": "JOB001",
+    "relevance": 1,
+    "suitable": false,
+    "competencies": {
+      "technical_skills": 1,
+      "problem_solving": 1,
+      "system_design": 1,
+      "software_engineering": 1,
+      "databases": 1,
+      "cloud_devops": 1,
+      "communication": 3,
+      "leadership": 1,
+      "adaptability": 2,
+      "project_experience": 1
+    }
+  },
+  {
+    "candidate_id": "C027",
+    "job_id": "JOB001",
+    "relevance": 1,
+    "suitable": false,
+    "competencies": {
+      "technical_skills": 1,
+      "problem_solving": 1,
+      "system_design": 1,
+      "software_engineering": 1,
+      "databases": 1,
+      "cloud_devops": 1,
+      "communication": 4,
+      "leadership": 1,
+      "adaptability": 2,
+      "project_experience": 1
+    }
+  },
+  {
+    "candidate_id": "C028",
+    "job_id": "JOB001",
+    "relevance": 1,
+    "suitable": false,
+    "competencies": {
+      "technical_skills": 1,
+      "problem_solving": 2,
+      "system_design": 1,
+      "software_engineering": 1,
+      "databases": 1,
+      "cloud_devops": 1,
+      "communication": 3,
+      "leadership": 2,
+      "adaptability": 2,
+      "project_experience": 1
+    }
+  },
+  {
+    "candidate_id": "C029",
+    "job_id": "JOB001",
+    "relevance": 2,
+    "suitable": false,
+    "competencies": {
+      "technical_skills": 2,
+      "problem_solving": 2,
+      "system_design": 1,
+      "software_engineering": 1,
+      "databases": 2,
+      "cloud_devops": 1,
+      "communication": 2,
+      "leadership": 1,
+      "adaptability": 2,
+      "project_experience": 1
+    },
+    "evidence_annotations": [
+      {
+        "competency": "leadership",
+        "quote": "Led a team of 10 engineers.",
+        "correctness": 1,
+        "is_supported": false,
+        "notes": "Resume only says 'Python, Java, SQL'. Claim is unsupported."
+      }
+    ]
+  },
+  {
+    "candidate_id": "C030",
+    "job_id": "JOB001",
+    "relevance": 1,
+    "suitable": false,
+    "competencies": {
+      "technical_skills": 1,
+      "problem_solving": 1,
+      "system_design": 1,
+      "software_engineering": 1,
+      "databases": 1,
+      "cloud_devops": 1,
+      "communication": 1,
+      "leadership": 1,
+      "adaptability": 1,
+      "project_experience": 1
+    },
+    "evidence_annotations": [
+      {
+        "competency": "system_design",
+        "quote": "Architected petabyte scale distributed streaming platform with 99.999% availability.",
+        "correctness": 1,
+        "is_supported": false,
+        "notes": "Resume is junior programmer with C++ and HTML. Claim is unsupported."
+      }
+    ]
+  }
+]

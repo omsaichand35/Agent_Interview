@@ -1,0 +1,27 @@
+[
+  {
+    "case_id": "HCASE_001",
+    "expected_interview_scores": {
+      "CAND_TOP_01": {
+        "min_score": 0.80,
+        "max_score": 0.95,
+        "demonstrated_competencies": ["backend_development", "system_design", "databases", "leadership"],
+        "unexpected_discovery": "leadership"
+      },
+      "CAND_MID_02": {
+        "min_score": 0.65,
+        "max_score": 0.78,
+        "demonstrated_competencies": ["backend_development", "databases"]
+      },
+      "CAND_FAIL_IDENT_03": {
+        "interview_started": false,
+        "reason": "identity_gate_blocked"
+      },
+      "CAND_UNQUAL_04": {
+        "min_score": 0.10,
+        "max_score": 0.40,
+        "demonstrated_competencies": []
+      }
+    }
+  }
+]
