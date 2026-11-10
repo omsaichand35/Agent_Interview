@@ -1,6 +1,6 @@
 {
   "evaluation": "Interview Reasoning Agent Evals",
-  "created_at": "2026-11-10T09:05:05.960191+00:00",
+  "created_at": "2026-11-10T09:39:55.829870+00:00",
   "execution_mode": "offline_deterministic_no_live_llm",
   "total_cases": 13,
   "passed_cases": 13,

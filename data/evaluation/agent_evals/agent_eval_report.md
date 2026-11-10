@@ -1,6 +1,6 @@
 # Interview Reasoning Agent Evals
 
-**Run:** 2026-11-10T09:05:05.960191+00:00  
+**Run:** 2026-11-10T09:39:55.829870+00:00  
 **Mode:** `offline_deterministic_no_live_llm`  
 **Cases passed:** 13/13 (100.0%)  
 **Cases failed:** 0
