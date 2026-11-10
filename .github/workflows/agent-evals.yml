@@ -32,6 +32,6 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install evaluation dependency
-        run: python -m pip install "pydantic>=2,<3"
+        run: python -m pip install "pydantic>=2,<3" "pydantic-settings>=2,<3"
       - name: Run labeled agent evaluations
         run: python backend/scripts/run_agent_evals.py
